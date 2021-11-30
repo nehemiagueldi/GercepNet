@@ -8,7 +8,7 @@ body {
 }
 
 .title {
-    font-size: 132.14px;
+    font-size: 7rem;
 }
 
 .button {
@@ -23,10 +23,13 @@ body {
     color: var(--color-pertama);
     margin-right: 8rem;
     font-size: 1.2rem;
+    transition: all 0.4s ease-in-out;
 }
 
 .btn-login:hover {
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn-signup {
@@ -37,8 +40,49 @@ body {
     text-decoration: none;
     color: var(--color-pertama);
     font-size: 1.2rem;
+    transition: all 0.4s ease-in-out;
 }
 
 .btn-signup:hover {
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: var(--color-kedua);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 5rem;
+    }
+    .button {
+        display: grid;
+        margin-top: 5rem;
+        width: 70%;
+        justify-content: center;
+    }
+    .btn-login {
+        margin-right: 0;
+    }
+
+    .btn-signup {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 588px) {
+    .container {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .minititle {
+        font-size: 1rem;
+    }
+    .btn-login {
+        padding: 0.5rem 3rem;
+    }
+
+    .btn-signup {
+        padding: 0.5rem 3rem;
+    }
 }

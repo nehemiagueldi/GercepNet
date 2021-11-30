@@ -42,3 +42,9 @@ Route::get('request', function () {
         "title" => "Request Listing"
     ]);
 });
+
+Route::get('facility', function () {
+    return view('management/facilityM', [
+        "title" => "List Facility"
+    ]);
+});

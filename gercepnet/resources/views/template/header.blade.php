@@ -10,8 +10,6 @@
     @yield('custom_css')
 </head>
 <body>
-    @include('partials.navbar')
-
     <div class="text-center container mt-5">
         @yield('container')
     </div>
