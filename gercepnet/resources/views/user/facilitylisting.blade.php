@@ -10,7 +10,7 @@
     @component('user.components.listing')
 
         @slot('title')
-            Booking Form
+            Facility Listing
         @endslot
 
         Ini adalah isinya

@@ -1,4 +1,4 @@
-@extends('template.header', ['title'=>'Request Listing'])
+@extends('template.header', ['title'=>'Facilities Listing'])
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/homeuser.css')}}">
@@ -6,5 +6,14 @@
 
 @section('container')
     @include('layouts.usernavbar')
-    <h1>Request Listing</h1>
+    
+    @component('user.components.listing')
+
+        @slot('title')
+            Request Listing
+        @endslot
+
+        Ini adalah isinya
+    @endcomponent
+
 @endsection

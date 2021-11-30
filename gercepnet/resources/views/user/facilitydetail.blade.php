@@ -8,7 +8,12 @@
     @include('layouts.usernavbar')
     
     @component('user.components.listing')
-        <h1>Facility Listing</h1>
+
+        @slot('title')
+            Facility Detail
+        @endslot
+
+        Ini adalah isinya
     @endcomponent
 
 @endsection

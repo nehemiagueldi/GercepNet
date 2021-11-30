@@ -25,7 +25,9 @@ Route::get('template', function () {
     return view('template');
 });
 
-Route::get('homeuser', fn () => view('user/home'));
+Route::get('/', fn () => view('user/facilitylisting'));
+
+Route::get('detail', fn () => view('user/facilitydetail'));
 
 Route::get('booking', fn () => view('user/booking'));
 
