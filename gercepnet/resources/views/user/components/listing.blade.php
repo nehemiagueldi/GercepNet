@@ -1,11 +1,3 @@
-<div class="listing">
-    
-    <div class="header">
-
-        <h1>{{ $title }}</h1>
-
-    </div>
-
-    {{ $slot }}
-
+<div class="header">
+    <h1>Facility Listing</h1>
 </div>

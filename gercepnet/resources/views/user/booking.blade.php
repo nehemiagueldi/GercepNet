@@ -1,4 +1,4 @@
-@extends('template.header', ['title'=>'Facilities Listing'])
+@extends('template.header', ['title'=>'Booking'])
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/homeuser.css')}}">
@@ -6,14 +6,5 @@
 
 @section('container')
     @include('layouts.usernavbar')
-    
-    @component('user.components.listing')
-
-        @slot('title')
-            Booking Form
-        @endslot
-
-        Ini adalah isinya
-    @endcomponent
-
+    <h1>Booking Listing</h1>
 @endsection
