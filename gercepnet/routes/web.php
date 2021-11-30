@@ -48,3 +48,27 @@ Route::get('facility', function () {
         "title" => "List Facility"
     ]);
 });
+
+Route::get('adminhome', function () {
+    return view('admin/adminhome', [
+        "title" => "Home - Admin"
+    ]);
+});
+
+Route::get('userlist', function () {
+    return view('admin/userlist', [
+        "title" => "User List"
+    ]);
+});
+
+Route::get('facilitylist', function () {
+    return view('admin/facilitylist', [
+        "title" => "Facility List"
+    ]);
+});
+
+Route::get('requestlist', function () {
+    return view('admin/requestlist', [
+        "title" => "Request List"
+    ]);
+});
