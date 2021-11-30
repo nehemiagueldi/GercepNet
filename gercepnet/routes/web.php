@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 $appName = "Laravel 8";
 
-Route::view('/', 'home', ['appName' => $appName]);
+Route::view('/', 'welcome', ['appName' => $appName]);
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
+});
+
+Route::get('template', function () {
+    return view('template');
 });
 
 Route::get('profile', function () {
