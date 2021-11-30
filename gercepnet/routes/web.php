@@ -26,6 +26,7 @@ Route::get('template', function () {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/', fn () => view('user/facilitylisting'));
 
 Route::get('detail', fn () => view('user/facilitydetail'));
@@ -34,6 +35,8 @@ Route::get('booking', fn () => view('user/booking'));
 
 Route::get('request', fn () => view('user/request'));
 
+=======
+>>>>>>> parent of dc9a036 (Routing)
 =======
 >>>>>>> parent of dc9a036 (Routing)
 Route::get('profile', function () {
