@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/template/main.css')}}">
-    <title>{{ $title }}</title>
+    <title>Gercepnet | {{ $title }}</title>
     @yield('custom_css')
 </head>
 <body>
+    @include('partials.navbar')
+
     <div class="text-center container mt-5">
         @yield('container')
     </div>

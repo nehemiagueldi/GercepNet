@@ -24,3 +24,21 @@ Route::get('/', function () {
 Route::get('template', function () {
     return view('template');
 });
+
+Route::get('homeuser', function () {
+    return view('user/home', [
+        "title" => "Facility Listing"
+    ]);
+});
+
+Route::get('booking', function () {
+    return view('user/booking', [
+        "title" => "Booking"
+    ]);
+});
+
+Route::get('request', function () {
+    return view('user/request', [
+        "title" => "Request Listing"
+    ]);
+});
