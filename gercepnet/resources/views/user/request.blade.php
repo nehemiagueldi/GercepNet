@@ -1,4 +1,4 @@
-@extends('template.header')
+@extends('template.header', ['title'=>'Request Listing'])
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/homeuser.css')}}">

@@ -1,4 +1,4 @@
-@extends('template.header')
+@extends('template.header', ['title'=>'Facilities Listing'])
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/homeuser.css')}}">
@@ -6,5 +6,9 @@
 
 @section('container')
     @include('layouts.usernavbar')
-    <h1>Facilities Listing</h1>
+    
+    @component('user.components.listing')
+        <h1>Facility Listing</h1>
+    @endcomponent
+
 @endsection

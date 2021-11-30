@@ -1,4 +1,4 @@
-@extends('template.header')
+@extends('template.header', ['title'=>'Booking'])
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/homeuser.css')}}">
