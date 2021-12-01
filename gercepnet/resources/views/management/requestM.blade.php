@@ -8,6 +8,5 @@
 @include('navbar.managenavbar')
 
 @section('container')
-    <h1>Facility Listing</h1>
-    @foreach($facility as)
+    <h1>Ini contoh template</h1>
 @endsection

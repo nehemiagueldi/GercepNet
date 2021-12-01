@@ -16,6 +16,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Lemon;
+    color: var(--color-pertama);
 }
 .louis {
     font-family: Louis;
