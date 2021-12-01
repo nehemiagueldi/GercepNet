@@ -33,4 +33,6 @@ class Facility extends Model
      * @var array
      */
     protected $casts = [];
+
+    protected $guarded = ['id'];
 }
