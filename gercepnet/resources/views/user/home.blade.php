@@ -7,4 +7,7 @@
 
 @section('container')
     <h1>Facilities Listing</h1>
+    <p>Ini Foto Fasilitas</p>
+    <p>Ini nama Fasilitas</p>
+    <ul><a href="/detailuser">Ini Show More</a></ul>
 @endsection
