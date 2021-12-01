@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Facility;
-use App\Http\Controllers\FacilityController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserFacility;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\RegisterController;
 
 
@@ -25,26 +26,26 @@ Route::view('/', 'welcome', ['appName' => $appName]);
 
 Route::get('/', function () {
     return view('welcome');
-});     
+});
 
 // DASHBOARD
 
-Route::get('/management/dashboard', function () { 
-    return view('management.dashboard',[
+Route::get('/management/dashboard', function () {
+    return view('management.dashboard', [
         "title" => "Dashboard Management"
-    ]); 
+    ]);
 })->name('management')->middleware('management');
 
-Route::get('/user/dashboard', function () { 
-    return view('user.dashboard',[
+Route::get('/user/dashboard', function () {
+    return view('user.dashboard', [
         "title" => "Dashboard User"
-    ]); 
+    ]);
 })->name('user')->middleware('user');
 
-Route::get('/admin/dashboard', function () { 
-    return view('admin.dashboard',[
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard', [
         "title" => "Dashboard Admin"
-    ]); 
+    ]);
 })->name('admin')->middleware('admin');
 
 
@@ -59,14 +60,14 @@ Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']
 Route::get('booking', function () {
     return view('user/booking', [
         "title" => "Booking"
-    ]);    
-});    
+    ]);
+});
 
 Route::get('request', function () {
     return view('user/request', [
         "title" => "Request Listing"
-    ]);    
-});    
+    ]);
+});
 
 
 
@@ -88,8 +89,8 @@ Route::get('/facility/delete/{id}', [FacilityController::class, 'delete']);
 Route::get('/management/request', function () {
     return view('management.requestM', [
         "title" => "Request Listing"
-    ]);    
-});    
+    ]);
+});
 
 
 
@@ -130,9 +131,11 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+
 Route::get('/dashboard/management', [DashboardController::class, 'index'])->middleware('auth');
 
 
 Route::get('template', function () {
     return view('template');
-});        
+});

@@ -26,10 +26,14 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255',
-            'image' => 'required|image|file|max:1024'
+            'image' => 'required|image|file|max:1024',
+            'password' => 'required|min:5|max:255'
             // harus ada file karena tipe filenya "file", max/min itu ukuran filenya satuannya KB, size itu batas ukuran gambar
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('fotoprofile');
+        }
 
         // OPSI ENKRIPSI
         // OPSI 1
