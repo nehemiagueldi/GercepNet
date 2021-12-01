@@ -34,36 +34,6 @@ Route::get('/userlisting', [UserFacility::class, 'index']);
 
 Route::get('/userdetail/{slug}', [UserFacility::class, 'show']);
 
-// Route::get('userdetail/{slug}', function ($slug) {
-//     $facilities = [
-//         [
-//             "nama" => "Ruang Profesional",
-//             "slug" => "ruang-profesional",
-//             "kapasitas" => "5 Orang",
-//             "deskripsi" => "Ruangan BerAc",
-//         ],
-//         [
-//             "nama" => "Ruang Megah",
-//             "slug" => "ruang-megah",
-//             "kapasitas" => "10 Orang",
-//             "deskripsi" => "Ruangan BerAc",
-//         ]
-//     ];
-
-//     $facility_target = [];
-
-//     foreach ($facilities as $facility) {
-//         if ($facility["slug"] === $slug) {
-//             $facility_target = $facility;
-//         }
-//     }
-
-//     return view('user/detail', [
-//         "title" => "Facility Detail",
-//         "facility" => $facility_target
-//     ]);
-// });
-
 Route::get('booking', function () {
     return view('user/booking', [
         "title" => "Booking"
