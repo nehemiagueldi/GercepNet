@@ -43,7 +43,7 @@ class FacilityController extends Controller
             "post" => Post::find($facility)
         ]);
     }
-    
+
     public function edit($id)
     {
         $facility = DB::table('facilities')->where('id',$id)->get();
@@ -60,6 +60,12 @@ class FacilityController extends Controller
             'descFasilitas'=>$request->descFasilitas,
             'jenisFasilitas'=>$request->jenisFasilitas,
         ]);
+        return redirect('/facility');
+    }
+
+    public function delete($id)
+    {
+        DB::table('facilities')->where('id',$id)->delete();
         return redirect('/facility');
     }
 }

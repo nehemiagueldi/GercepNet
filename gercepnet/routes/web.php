@@ -84,6 +84,7 @@ Route::get('/facility/edit/{id}', [FacilityController::class, 'edit']);
 
 Route::post('/facility/update', [FacilityController::class, 'update']);
 
+Route::get('/facility/delete/{id}', [FacilityController::class, 'delete']);
 
 
 Route::get('adminhome', function () {

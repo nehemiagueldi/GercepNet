@@ -18,7 +18,7 @@
  
 	@foreach($facilities as $f)
 	<h1>Facility Listing</h1>
-        <form action="/facility/edit" method="post">
+        <form action="/facility/update" method="post">
 		{{ csrf_field() }}
         <input type="hidden" name="id" value="{{ $f->id }}"> <br/>
 	    Nama Fasilitas <input type="text" required="required" name="namaFasilitas" value="{{ $f->namaFasilitas }}"> <br/>

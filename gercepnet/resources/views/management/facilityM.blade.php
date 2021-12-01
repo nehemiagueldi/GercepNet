@@ -1,19 +1,16 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/facility-m.css')}}">
+<link rel="stylesheet" href="{{asset('css/management/facility.css')}}">
 <link rel="stylesheet" href="{{asset('css/navbar/navbar-m.css')}}">
 
 @endsection
 @include('navbar.managenavbar')
 
 @section('container')
-    <h1>Facility Listing</h1>
-	    <a href="/facility/add"> + Tambah Pegawai Baru</a>
-	<br/>
-	<br/>
- 
-	<table class="table table-striped">
+    <h1>Facility Listing</h1> <br>
+	    <a href="/facility/add" class="btn-add float-end mb-3"> Add New</a> 
+	<table class="table">
 		<tr>
 			<th>Nama Fasilitas</th>
 			<th>Deskipsi</th>
