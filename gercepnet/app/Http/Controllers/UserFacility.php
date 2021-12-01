@@ -16,11 +16,11 @@ class UserFacility extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show($id)
     {
         return view('user/detail', [
             "title" => "Facility Detail",
-            "facility" => Facility::find($slug)
+            "facility" => Facility::find($id)
         ]);
     }
 }
