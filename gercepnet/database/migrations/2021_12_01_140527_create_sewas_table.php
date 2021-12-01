@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSewaTable extends Migration
+class CreateSewasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,6 @@ class CreateSewaTable extends Migration
     {
         Schema::create('sewa', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idFasilitas');
-            $table->foreignId('idUser');
             $table->dateTime('jam_mulai');
             $table->dateTime('jam_selesai');
             $table->timestamps();

@@ -35,4 +35,9 @@ class Facility extends Model
     protected $casts = [];
 
     protected $guarded = ['id'];
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class);
+    }
 }
