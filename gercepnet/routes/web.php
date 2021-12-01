@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Facility;
 use App\Http\Controllers\FacilityController;
+use App\Http\Controllers\UserFacility;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,28 +28,9 @@ Route::get('template', function () {
     return view('template');
 });
 
+Route::get('/facility', [FacilityController::class, 'index']);
 
-
-Route::get('userlisting', function () {
-    $facilities = [
-        [
-            "nama" => "Ruang Profesional",
-            "slug" => "ruang-profesional",
-            "kapasitas" => "5 Orang",
-            "deskripsi" => "Ruangan BerAc",
-        ],
-        [
-            "nama" => "Ruang Megah",
-            "slug" => "ruang-megah",
-            "kapasitas" => "10 Orang",
-            "deskripsi" => "Ruangan BerAc",
-        ]
-    ];
-    return view('user/listing', [
-        "title" => "Facility Listing",
-        "data" => $facilities
-    ]);
-});
+Route::get('/userlisting', [UserFacility::class, 'index']);
 
 Route::get('userdetail/{slug}', function ($slug) {
     $facilities = [
@@ -94,13 +76,13 @@ Route::get('request', function () {
 
 Route::get('/facility', [FacilityController::class, 'index']);
 
-Route::get('/facility/add',[FacilityController::class, 'create']);
+Route::get('/facility/add', [FacilityController::class, 'create']);
 
-Route::post('/facility/store',[FacilityController::class, 'store']);
+Route::post('/facility/store', [FacilityController::class, 'store']);
 
-Route::get('/facility/edit/{id}',[FacilityController::class, 'edit']);
+Route::get('/facility/edit/{id}', [FacilityController::class, 'edit']);
 
-Route::post('/facility/update',[FacilityController::class, 'update']);
+Route::post('/facility/update', [FacilityController::class, 'update']);
 
 
 
