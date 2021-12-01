@@ -10,9 +10,10 @@
 
     @foreach($data as $key)
     <article class="mb-5">
-            <h2><a href="/userdetail/{{ $key->id }}">{{ $key->namaFasilitas }}</a></h2>
-            <h2>{{ $key->jenisFasilitas }}</h2>
-            <h2>{{ $key->descFasilitas }}</h2>
+            <img src="https://picsum.photos/200/300" alt="Foto">
+            <p><a href="/userdetail/{{ $key->id }}">{{ $key->namaFasilitas }}</a></p>
+            <p>{{ $key->jenisFasilitas }}</p>
+            <p>{{ $key->descFasilitas }}</p>
         </article>
     @endforeach
 

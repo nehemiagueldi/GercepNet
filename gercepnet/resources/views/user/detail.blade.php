@@ -9,9 +9,9 @@
     <h1>{{ $title }}</h1>
 
     <article>
-        <h2>{{ $facility->namaFasilitas }}</h2>
-        <h2>{{ $facility->jenisFasilitas }}</h2>
-        <h2>{{ $facility->descFasilitas }}</h2>
+        <p>{{ $facility->namaFasilitas }}</p>
+        <p>{{ $facility->jenisFasilitas }}</p>
+        <p>{{ $facility->descFasilitas }}</p>
     </article>
 
     <a href="/userlisting">Back</a>
