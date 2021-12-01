@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Facility;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\UserFacility;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +35,7 @@ Route::get('/facility', [FacilityController::class, 'index']);
 
 Route::get('/userlisting', [UserFacility::class, 'index']);
 
-Route::get('/userdetail/{slug}', [UserFacility::class, 'show']);
+Route::get('/userdetail/{facility:slug}', [UserFacility::class, 'show']);
 
 Route::get('booking', function () {
     return view('user/booking', [
@@ -82,3 +85,12 @@ Route::get('requestlist', function () {
         "title" => "Request List"
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
