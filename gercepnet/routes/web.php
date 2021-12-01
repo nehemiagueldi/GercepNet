@@ -32,7 +32,7 @@ Route::get('/facility', [FacilityController::class, 'index']);
 
 Route::get('/userlisting', [UserFacility::class, 'index']);
 
-Route::get('/userdetail/{slug}', [UserFacility::class, 'index']);
+Route::get('/userdetail/{slug}', [UserFacility::class, 'show']);
 
 // Route::get('userdetail/{slug}', function ($slug) {
 //     $facilities = [
