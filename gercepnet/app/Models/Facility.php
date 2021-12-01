@@ -16,6 +16,7 @@ class Facility extends Model
      */
     protected $fillable = [
         'namaFasilitas',
+        'slug',
         'descFasilitas',
         'jenisFasilitas',
     ];

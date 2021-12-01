@@ -11,7 +11,7 @@
     @foreach($data as $key)
     <article class="mb-5">
             <img src="https://picsum.photos/200/300" alt="Foto">
-            <p><a href="/userdetail/{{ $key->id }}">{{ $key->namaFasilitas }}</a></p>
+            <p><a href="/userdetail/{{ $key->slug }}">{{ $key->namaFasilitas }}</a></p>
             <p>{{ $key->jenisFasilitas }}</p>
             <p>{{ $key->descFasilitas }}</p>
         </article>

@@ -16,11 +16,11 @@ class UserFacility extends Controller
         ]);
     }
 
-    public function show(Facility $namaFasilitas)
+    public function show(Facility $facility)
     {
         return view('user/detail', [
             "title" => "Facility Detail",
-            "facility" => $namaFasilitas
+            "facility" => $facility
         ]);
     }
 }
