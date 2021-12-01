@@ -10,9 +10,9 @@
 
     @foreach($data as $key)
     <article class="mb-5">
-            <h2><a href="/userdetail/{{ $key["slug"] }}">{{ $key["nama"] }}</a></h2>
-            <h2>{{ $key["kapasitas"] }}</h2>
-            <h2>{{ $key["deskripsi"] }}</h2>
+            <h2><a href="/userdetail/{{ $key->id }}">{{ $key->namaFasilitas }}</a></h2>
+            <h2>{{ $key->jenisFasilitas }}</h2>
+            <h2>{{ $key->descFasilitas }}</h2>
         </article>
     @endforeach
 

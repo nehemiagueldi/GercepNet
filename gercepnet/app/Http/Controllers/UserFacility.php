@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facility;
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Routing\Controller;
 
 class UserFacility extends Controller
 {
@@ -11,7 +12,15 @@ class UserFacility extends Controller
     {
         return view('user/listing', [
             "title" => "Facility Listing",
-            "data" => User::all()
+            "data" => Facility::all()
+        ]);
+    }
+
+    public function show($slug)
+    {
+        return view('user/detail', [
+            "title" => "Facility Detail",
+            "facility" => Facility::find($slug)
         ]);
     }
 }
