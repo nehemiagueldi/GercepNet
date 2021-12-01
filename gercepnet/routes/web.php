@@ -35,7 +35,7 @@ Route::get('/facility', [FacilityController::class, 'index']);
 
 Route::get('/userlisting', [UserFacility::class, 'index']);
 
-Route::get('/userdetail/{facility:slug}', [UserFacility::class, 'show']);
+Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
 
 Route::get('booking', function () {
     return view('user/booking', [

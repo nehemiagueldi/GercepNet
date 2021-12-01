@@ -14,5 +14,6 @@
         <p>{{ $facility->descFasilitas }}</p>
     </article>
 
+    <a href="/booking">Book</a>
     <a href="/userlisting">Back</a>
 @endsection

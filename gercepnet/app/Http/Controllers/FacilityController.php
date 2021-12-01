@@ -12,16 +12,16 @@ class FacilityController extends Controller
 {
     public function index()
     {
-    	$facility = DB::table('facilities')->get();
-    	return view('management/facilityM',[
-        'facilities' => $facility, 
-        "title" => "List Facility"
+        $facility = DB::table('facilities')->get();
+        return view('management/facilityM', [
+            'facilities' => $facility,
+            "title" => "List Facility"
         ]);
     }
 
     public function create()
     {
-        return view('management.addM',[
+        return view('management.addM', [
             "title" => "Add Facility"
         ]);
     }
@@ -29,24 +29,16 @@ class FacilityController extends Controller
     public function store(Request $request)
     {
         DB::table('facilities')->insert([
-            'namaFasilitas'=>$request->namaFasilitas,
-            'descFasilitas'=>$request->descFasilitas,
-            'jenisFasilitas'=>$request->jenisFasilitas,
+            'namaFasilitas' => $request->namaFasilitas,
+            'descFasilitas' => $request->descFasilitas,
+            'jenisFasilitas' => $request->jenisFasilitas,
         ]);
         return redirect('/facility');
     }
 
-    public function show($facility)
-    {
-        return view('management.facilityM',[
-            "title" => "Single Post",
-            "post" => Post::find($facility)
-        ]);
-    }
-
     public function edit($id)
     {
-        $facility = DB::table('facilities')->where('id',$id)->get();
+        $facility = DB::table('facilities')->where('id', $id)->get();
         return view('management.editM', [
             'facilities' => $facility,
             "title" => "Edit Facility"
@@ -55,17 +47,17 @@ class FacilityController extends Controller
 
     public function update(Request $request)
     {
-        DB::table('facilities')->where('id',$request->id)->update([
-            'namaFasilitas'=>$request->namaFasilitas,
-            'descFasilitas'=>$request->descFasilitas,
-            'jenisFasilitas'=>$request->jenisFasilitas,
+        DB::table('facilities')->where('id', $request->id)->update([
+            'namaFasilitas' => $request->namaFasilitas,
+            'descFasilitas' => $request->descFasilitas,
+            'jenisFasilitas' => $request->jenisFasilitas,
         ]);
         return redirect('/facility');
     }
 
     public function delete($id)
     {
-        DB::table('facilities')->where('id',$id)->delete();
+        DB::table('facilities')->where('id', $id)->delete();
         return redirect('/facility');
     }
 }
