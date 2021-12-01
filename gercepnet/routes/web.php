@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Facility;
+use App\Http\Controllers\FacilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,11 +92,17 @@ Route::get('request', function () {
     ]);
 });
 
-Route::get('facility', function () {
-    return view('management/facilityM', [
-        "title" => "List Facility"
-    ]);
-});
+Route::get('/facility', [FacilityController::class, 'index']);
+
+Route::get('/facility/add',[FacilityController::class, 'create']);
+
+Route::post('/facility/store',[FacilityController::class, 'store']);
+
+Route::get('/facility/edit/{id}',[FacilityController::class, 'edit']);
+
+Route::post('/facility/update',[FacilityController::class, 'update']);
+
+
 
 Route::get('adminhome', function () {
     return view('admin/adminhome', [
