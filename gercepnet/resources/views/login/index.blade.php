@@ -1,4 +1,9 @@
-@extends('layouts.main')
+@extends('template.header')
+
+@section('custom_css')
+<link rel="stylesheet" href="{{asset('css/template.css')}}">
+@endsection
+
 @section('container')
 <div class="row justify-content-center">
   <div class="col-md-4">
