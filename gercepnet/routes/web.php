@@ -25,9 +25,56 @@ Route::get('template', function () {
     return view('template');
 });
 
-Route::get('homeuser', function () {
-    return view('user/home', [
-        "title" => "Facility Listing"
+
+
+Route::get('userlisting', function () {
+    $facilities = [
+        [
+            "nama" => "Ruang Profesional",
+            "slug" => "ruang-profesional",
+            "kapasitas" => "5 Orang",
+            "deskripsi" => "Ruangan BerAc",
+        ],
+        [
+            "nama" => "Ruang Megah",
+            "slug" => "ruang-megah",
+            "kapasitas" => "10 Orang",
+            "deskripsi" => "Ruangan BerAc",
+        ]
+    ];
+    return view('user/listing', [
+        "title" => "Facility Listing",
+        "data" => $facilities
+    ]);
+});
+
+Route::get('userdetail/{slug}', function ($slug) {
+    $facilities = [
+        [
+            "nama" => "Ruang Profesional",
+            "slug" => "ruang-profesional",
+            "kapasitas" => "5 Orang",
+            "deskripsi" => "Ruangan BerAc",
+        ],
+        [
+            "nama" => "Ruang Megah",
+            "slug" => "ruang-megah",
+            "kapasitas" => "10 Orang",
+            "deskripsi" => "Ruangan BerAc",
+        ]
+    ];
+
+    $facility_target = [];
+
+    foreach ($facilities as $facility) {
+        if ($facility["slug"] === $slug) {
+            $facility_target = $facility;
+        }
+    }
+
+    return view('user/detail', [
+        "title" => "Facility Detail",
+        "facility" => $facility_target
     ]);
 });
 

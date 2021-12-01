@@ -6,5 +6,5 @@
 @include('navbar.usernavbar')
 
 @section('container')
-    <h1>Booking Listing</h1>
+    <h1>{{ $title }}</h1>
 @endsection

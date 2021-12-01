@@ -6,5 +6,5 @@
 @include('navbar.usernavbar')
 
 @section('container')
-    <h1>Request Listing</h1>
+    <h1>{{ $title }}</h1>
 @endsection
