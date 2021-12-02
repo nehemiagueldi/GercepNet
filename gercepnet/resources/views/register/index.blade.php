@@ -60,10 +60,12 @@
 
         <div class="form-group mt-4 mb-4">
           <div class="captcha">
-              <span>{!! captcha_img() !!}</span>
-              <button type="button" class="btn btn-danger" class="reload" id="reload">
-                  &#x21bb;
-              </button>
+            <img src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" id="captchaCode" alt="" class="captcha">
+            <a rel="nofollow" href="javascript:;" onclick="document.getElementById('captchaCode').src='captcha/flat?'+Math.random()" class="refresh">             
+              <button type="button" class="btn btn-danger btn-refresh" class="reload" id="reload"><i class="fas fa-sync-alt">
+              &#x21bb;
+              </i></button>
+            </a>
           </div>
         </div>
         <div class="form-group mb-4">
