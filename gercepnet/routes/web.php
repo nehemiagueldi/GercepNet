@@ -43,8 +43,8 @@ Route::group(['middleware' => 'user'], function () {
     Route::get('/user/dashboard', [UserController::class, 'dashboard']);
     Route::get('/userlisting', [UserFacility::class, 'index']);
     Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
-    Route::get('booking/add', [SewaController::class, 'create']);
-    Route::get('request', [SewaController::class, 'request']);
+    Route::get('/booking', [SewaController::class, 'index']);
+    Route::post('/booking/request', [SewaController::class, 'create']);
 });
 
 

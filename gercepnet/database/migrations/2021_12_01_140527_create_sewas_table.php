@@ -13,7 +13,7 @@ class CreateSewasTable extends Migration
      */
     public function up()
     {
-        Schema::create('sewa', function (Blueprint $table) {
+        Schema::create('sewas', function (Blueprint $table) {
             $table->id();
             $table->dateTime('jam_mulai');
             $table->dateTime('jam_selesai');
@@ -28,6 +28,6 @@ class CreateSewasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sewa');
+        Schema::dropIfExists('sewas');
     }
 }

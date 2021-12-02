@@ -8,10 +8,4 @@
 
 @section('container')
     <h1>Ini contoh template</h1>
-    <form>
-        <input class="form-control" type="datetime-local">
-    </form>
-    <script>
-        flatpickr("input", {});
-    </script>
 @endsection

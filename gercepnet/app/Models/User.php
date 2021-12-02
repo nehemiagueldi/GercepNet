@@ -51,6 +51,8 @@ class User extends Authenticatable
 
     public function sewa()
     {
-        return $this->hasMany(Sewa::class);
+        // return $this->hasMany(Sewa::class);
+        // return $this->belongsTo('App\Sewa');
+        return $this->belongsTo(Sewa::class);
     }
 }

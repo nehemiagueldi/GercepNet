@@ -27,6 +27,7 @@ class UserController extends Controller
             "title" => "Booking"
         ]);
     }
+
     public function request()
     {
         return view('user/request', [

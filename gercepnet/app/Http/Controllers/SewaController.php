@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Sewa;
 use App\Http\Requests\StoreSewaRequest;
 use App\Http\Requests\UpdateSewaRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class SewaController extends Controller
 {
@@ -15,7 +17,12 @@ class SewaController extends Controller
      */
     public function index()
     {
-        //
+        $sewa = Sewa::with('users')->get();
+        // $sewa = DB::table('sewa')->get();
+        return view('user/booking', [
+            'sewas' => $sewa,
+            "title" => "Booking"
+        ])->with('Sewa', $sewa);
     }
 
     /**
@@ -23,12 +30,15 @@ class SewaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('user.booking', [
-            "title" => "Booking"
+        DB::table('sewas')->insert([
+            'jam_mulai' => $request->jam_mulai,
+            'jam_selesai' => $request->jam_selesai,
         ]);
+        return redirect('/booking');
     }
+
 
     /**
      * Store a newly created resource in storage.
