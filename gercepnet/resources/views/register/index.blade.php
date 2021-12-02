@@ -1,7 +1,7 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/template.css')}}">
+<link rel="stylesheet" href="{{asset('css/register.css')}}">
 @endsection
 
 @section('container')
