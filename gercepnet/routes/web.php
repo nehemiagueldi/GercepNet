@@ -8,7 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SewaController; 
+use App\Http\Controllers\SewaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,3 +85,4 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+Route::post('/profile', [UserController::class, 'updateprofile'])->middleware('auth');
