@@ -19,7 +19,7 @@
               took a galley of type and scrambled it to make a type specimen book.</h3>
         <div class="button mx-auto">
             <a href="/login" class="btn-login">Login</a>
-            <a href="/signup" class="btn-signup">SignUp</a>
+            <a href="/register" class="btn-signup">SignUp</a>
         </div>
     </div>
     <script>

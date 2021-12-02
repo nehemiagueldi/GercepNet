@@ -20,31 +20,16 @@ class CheckRole
     //maka silahkan akses
     //jika tidak sesuai akan diarahkan ke home
 
-    // $roles = array_slice(func_get_args(), 2);
+    $roles = array_slice(func_get_args(), 2);
 
-    // foreach ($roles as $role) { 
-    //     $user = \Auth::user()->role;
-    //     if( $user == $role){
-    //         return $next($request);
-    //     }
-    // }
-
-    // return redirect('/');
-
-        if( Auth::check() )
-        {
-            // if user is not admin take him to his dashboard
-            if ( Auth::user()->isUser() ) {
-                return redirect(route('user/dashboard'));
-            }
-            else if ( Auth::user()->isManagement() ) {
-                return redirect(route('management/dashboard'));
-            }
-            // allow admin to proceed with request
-            else if ( Auth::user()->isAdmin() ) {
-                return $next($request);
-            }
+    foreach ($roles as $role) { 
+        $user = \Auth::user()->role;
+        if( $user == $role){
+            return $next($request);
         }
-        abort(404);  // for other user throw 404 error
     }
+
+    return redirect('/');
+}
+
 }

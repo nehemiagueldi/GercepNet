@@ -13,4 +13,23 @@ class UserController extends Controller
             'title' => 'Profile'
         ]);
     }
+    
+    public function dashboard()
+    {
+        return view('user.dashboard', [
+            "title" => "Dashboard User"
+        ]);
+    }
+    public function booking()
+    {
+        return view('user/booking', [
+            "title" => "Booking"
+        ]);
+    }
+    public function request()
+    {
+        return view('user/request', [
+            "title" => "Request Listing"
+        ]);
+    }
 }

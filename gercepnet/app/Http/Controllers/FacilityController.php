@@ -10,6 +10,13 @@ use App\Http\Requests\UpdateFacilityRequest;
 
 class FacilityController extends Controller
 {
+    public function dashboard()
+    {
+        return view('management.dashboard', [
+            "title" => "Dashboard Management"
+        ]);
+    }
+    
     public function index()
     {
         $facility = DB::table('facilities')->get();
@@ -59,5 +66,15 @@ class FacilityController extends Controller
     {
         DB::table('facilities')->where('id', $id)->delete();
         return redirect('/facility');
+    }
+
+
+    // REQUEST
+
+    public function requestlist()
+    {
+        return view('management.requestM', [
+            "title" => "Request Listing"
+        ]);
     }
 }

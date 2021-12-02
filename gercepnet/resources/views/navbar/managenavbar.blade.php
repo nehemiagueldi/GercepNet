@@ -3,21 +3,19 @@
       <a class="navbar-brand" href="/management/dashboard">
         <img src="{{asset('image/logo/G.png')}}" width="40" height="40" alt="">
       </a>
-        <div class="collapse navbar-collapse row" id="navbarNav">
-          <ul class="navbar-nav justify-content-center">
+        <div class="" id="navbarScroll">
+          <ul class="navbar-nav justify-content-center navbar-nav-scroll" style="--bs-scroll-height: 100px;"
             <li class="nav-item active">
               <a class="nav-link active" aria-current="page" href="/facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/management/request" {{ ($title === "request") ? 'active' : '' }}>Request</a>
             </li>
-            <li class="nav-item">
-              <form action="/logout" method="POST">
-                @csrf
-                <button type="submit" class="dropdown-item nav-link"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
-              </form>
-            </li>
           </ul>
         </div>
+          <form action="/logout" method="POST" class="">
+            @csrf
+            <button type="submit" class="btn mt-3"> Logout</button>
+          </form>
     </div>
   </nav>

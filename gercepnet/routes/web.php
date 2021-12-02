@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -28,114 +30,55 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// DASHBOARD
-
-Route::get('/management/dashboard', function () {
-    return view('management.dashboard', [
-        "title" => "Dashboard Management"
-    ]);
-})->name('management')->middleware('management');
-
-Route::get('/user/dashboard', function () {
-    return view('user.dashboard', [
-        "title" => "Dashboard User"
-    ]);
-})->name('user')->middleware('user');
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard', [
-        "title" => "Dashboard Admin"
-    ]);
-})->name('admin')->middleware('admin');
-
-
-
-
+Route::get('template', function () {
+    return view('template');
+});
 
 // USER
-Route::get('/userlisting', [UserFacility::class, 'index']);
+Route::group(['middleware' => 'user'], function(){
 
-Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
-
-Route::get('booking', function () {
-    return view('user/booking', [
-        "title" => "Booking"
-    ]);
+    Route::get('/user/dashboard', [UserController::class, 'dashboard']);
+    Route::get('/userlisting', [UserFacility::class, 'index']);
+    Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
+    Route::get('booking', [UserController::class, 'booking']);
+    Route::get('request', [UserController::class, 'request']);
 });
-
-Route::get('request', function () {
-    return view('user/request', [
-        "title" => "Request Listing"
-    ]);
-});
-
-
-
 
 
 // MANAGEMENT
-Route::get('/facility', [FacilityController::class, 'index']);
+Route::group(['middleware' => 'management'], function(){
 
-Route::get('/facility/add', [FacilityController::class, 'create']);
+    Route::get('/management/dashboard', [FacilityController::class, 'dashboard']);
+    Route::get('/facility', [FacilityController::class, 'index']);
+    Route::get('/facility/add', [FacilityController::class, 'create']);
+    Route::post('/facility/store', [FacilityController::class, 'store']);
+    Route::get('/facility/edit/{id}', [FacilityController::class, 'edit']);
+    Route::post('/facility/update', [FacilityController::class, 'update']);
+    Route::get('/facility/delete/{id}', [FacilityController::class, 'delete']);
 
-Route::post('/facility/store', [FacilityController::class, 'store']);
-
-Route::get('/facility/edit/{id}', [FacilityController::class, 'edit']);
-
-Route::post('/facility/update', [FacilityController::class, 'update']);
-
-Route::get('/facility/delete/{id}', [FacilityController::class, 'delete']);
-
-Route::get('/management/request', function () {
-    return view('management.requestM', [
-        "title" => "Request Listing"
-    ]);
+    Route::get('/management/request', [FacilityController::class, 'requestlist']);
 });
-
-
-
 
 // ADMIN
-Route::get('adminhome', function () {
-    return view('admin/adminhome', [
-        "title" => "Home - Admin"
-    ]);
+Route::group(['middleware' => 'admin'], function(){
+
+    Route::get('/admin/dashboard',[AdminController::class,  'dashboard']);
+    Route::get('userlist', [AdminController::class,  'userlist']);
+    Route::get('facilitylist', [AdminController::class,  'facilitylist']);
+    Route::get('requestlist', [AdminController::class,  'requestlist']);
 });
 
-Route::get('userlist', function () {
-    return view('admin/userlist', [
-        "title" => "User List"
-    ]);
-});
-
-Route::get('facilitylist', function () {
-    return view('admin/facilitylist', [
-        "title" => "Facility List"
-    ]);
-});
-
-Route::get('requestlist', function () {
-    return view('admin/requestlist', [
-        "title" => "Request List"
-    ]);
-});
-
-
-
+    // Route::get('adminhome', function () {
+    //     return view('admin/adminhome', [
+    //         "title" => "Home - Admin"
+    //     ]);
+    // });
 
 // LOGIN REGISTER
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
-
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
-
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
 
-Route::get('/dashboard/management', [DashboardController::class, 'index'])->middleware('auth');
-
-
-Route::get('template', function () {
-    return view('template');
-});
