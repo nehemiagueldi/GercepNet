@@ -1,8 +1,29 @@
 body{
-    background-image: url("/image/template-bg/bg-register.jpg");
+    background-image: url("/image/template-bg/bg-register5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     font-family: Lemon;
     color: var(--color-pertama);
+}
+
+.registrasi{
+    background-color: white;
+    padding: 4rem 2rem;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    font-size: 7rem;
+    color: white;
+    text-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+}
+
+.input{
+    background: #DCEBF1;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: 'Louis';
+    margin-bottom: 1rem;
 }

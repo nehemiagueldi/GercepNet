@@ -14,15 +14,10 @@ body{
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.title-login{
-
-}
-
 .title {
     font-size: 7rem;
     color: white;
     text-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
-
 }
 
 .input{
