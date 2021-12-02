@@ -35,6 +35,7 @@
                     </div>
                     <form action="/booking/request" method="post">
 		                {{ csrf_field() }}
+                    <input type="hidden" name="category_id">
                     <input class="form-control" type="datetime-local" name="jam_mulai">
                     <input class="form-control" type="datetime-local" name="jam_selesai">
                     <button type="submit">Submit</button>

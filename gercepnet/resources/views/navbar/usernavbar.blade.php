@@ -9,7 +9,7 @@
                 <a class="nav-link" href="/userlisting" {{ ($title === "Facility Listing") ? 'active' : '' }}>Facility</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/booking/add" {{ ($title === "Booking") ? 'active' : '' }}>Booking</a>
+                <a class="nav-link " href="/booking" {{ ($title === "Booking") ? 'active' : '' }}>Booking</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/request" {{ ($title === "Request Listing") ? 'active' : '' }}>Request</a>

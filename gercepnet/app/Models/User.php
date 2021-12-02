@@ -53,6 +53,6 @@ class User extends Authenticatable
     {
         // return $this->hasMany(Sewa::class);
         // return $this->belongsTo('App\Sewa');
-        return $this->belongsTo(Sewa::class);
+        return $this->hasMany(Sewa::class);
     }
 }

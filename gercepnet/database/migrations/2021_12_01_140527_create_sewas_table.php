@@ -15,6 +15,9 @@ class CreateSewasTable extends Migration
     {
         Schema::create('sewas', function (Blueprint $table) {
             $table->id();
+            // $table->foreignId('fasilitas_id');
+            $table->foreignId('user_id');
+            $table->foreignId('jam_id');
             $table->dateTime('jam_mulai');
             $table->dateTime('jam_selesai');
             $table->timestamps();
