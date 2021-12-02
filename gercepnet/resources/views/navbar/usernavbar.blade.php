@@ -9,13 +9,19 @@
                 <a class="nav-link" href="/userlisting" {{ ($title === "Facility Listing") ? 'active' : '' }}>Facility</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/booking" {{ ($title === "Booking") ? 'active' : '' }}>Booking</a>
+                <a class="nav-link " href="/booking/add" {{ ($title === "Booking") ? 'active' : '' }}>Booking</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/request" {{ ($title === "Request Listing") ? 'active' : '' }}>Request</a>
             </li>
-          </ul>
-        </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome back !, {{ auth()->user()->name }}
+              </a>
+              <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-circle"></i> My Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+            </li>
+          </ul> 
           <form action="/logout" method="POST" class="">
             @csrf
             <button type="submit" class="btn mt-3"> Logout</button>

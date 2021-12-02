@@ -19,9 +19,17 @@ class AdminController extends Controller
 
     public function userlist()
     {
+        $users = DB::table('users')->get();
         return view('admin/userlist', [
+            'users' => $users,
             "title" => "User List"
         ]);
+    }
+
+    public function userD($id)
+    {
+        DB::delete('delete from users where id = ?',[$id]);
+        return redirect('userlist');
     }
 
     public function facilitylist()

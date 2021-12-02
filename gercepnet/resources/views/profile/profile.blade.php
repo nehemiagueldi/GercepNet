@@ -7,7 +7,12 @@
   {{-- form nya buat update profile cuman masih blom berfungsi KWKWWK --}}
   <form action="/profile" method="POST" enctype="multipart/form-data" class="form-label">
       <label for="image">Update Profile Image</label>
-      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+      @if ( auth()->user()->image )
+        <img src="{{ asset('storage/' . auth()->user()->image) }}" class= "img-preview img-fluid mb-3 col-sm-5 d-block">
+      @else
+        <img class= "img-preview img-fluid mb-3 col-sm-5">
+      @endif
+      <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()>
       @error('image')
       <div class="invalid-feedback">
         {{ $message }}
@@ -17,5 +22,19 @@
     </form>  
   </div> 
 </div>
+<script>
+  function previewImage() {
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent){
+      imgPreview.src = oFREvent.target.result;
+    }
+  }
+</script>
 @endauth
 

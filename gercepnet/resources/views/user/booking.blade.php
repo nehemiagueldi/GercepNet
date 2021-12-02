@@ -8,18 +8,28 @@
 @section('container')
     <h1>{{ $title }}</h1>
 
-    <form action="/login" method="POST">
         <div class="form-floating">
-          <select type="room" name="email" class="" id="email" placeholder="name@example.com" autofocus value="">
-          <label for="email">Email address</label>
-              <div class="invalid-feedback">
-              </div>
+          <!-- component -->
+          <section class="antialiased text-gray-600 h-screen px-4">
+            <div class="flex flex-col justify-center h-full">
+                <!-- Table -->
+                <form>
+                  <div class="mb-3">
+                    <label for="Select" class="form-label">Select fasilitas</label>
+                    <select id="Select" class="form-select">
+                      <option>Nama 1</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Select" class="form-label">Select menu</label>
+                    <select id="Select" class="form-select">
+                      <option>Disabled select</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+          </section>
         </div>
-        <div class="form-floating">
-          <input type="password" name="password" class="form-control" id="" placeholder="">
-          <label for="password">Password</label> 
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-      </form>
 
 @endsection

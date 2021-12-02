@@ -25,7 +25,9 @@ class SewaController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.booking', [
+            "title" => "Booking"
+        ]);
     }
 
     /**

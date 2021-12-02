@@ -16,10 +16,10 @@ class User
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=="user"){
+        if (auth()->user()->role == "user") {
             return $next($request);
             // return redirect('/admin');
         }
-        return abort(404);
+        return response()->view('gameover');
     }
 }

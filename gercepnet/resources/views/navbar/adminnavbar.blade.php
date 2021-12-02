@@ -4,7 +4,7 @@
       <img src="{{asset('image/logo/G.png')}}" width="40" height="40" alt="">
     </a>
       <div class="" id="navbarScroll">
-        <ul class="navbar-nav justify-content-center navbar-nav-scroll" style="--bs-scroll-height: 100px;"
+        <ul class="navbar-nav justify-content-center navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item active">
             <a class="nav-link active navbar-text" aria-current="page" href="/userlist" {{ ($title === "user") ? 'active' : '' }}>User</a>
           </li>

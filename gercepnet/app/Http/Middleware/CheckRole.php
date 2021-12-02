@@ -15,21 +15,20 @@ class CheckRole
      * @return mixed
      */
     public function handle($request, Closure $next)
-{
-    //jika akun yang login sesuai dengan role 
-    //maka silahkan akses
-    //jika tidak sesuai akan diarahkan ke home
+    {
+        //jika akun yang login sesuai dengan role 
+        //maka silahkan akses
+        //jika tidak sesuai akan diarahkan ke home
 
-    $roles = array_slice(func_get_args(), 2);
+        // $roles = array_slice(func_get_args(), 2);
 
-    foreach ($roles as $role) { 
-        $user = \Auth::user()->role;
-        if( $user == $role){
-            return $next($request);
-        }
+        // foreach ($roles as $role) { 
+        //     $user = \Auth::user()->role;
+        //     if( $user == $role){
+        //         return $next($request);
+        //     }
+        // }
+
+        // return redirect('/');
     }
-
-    return redirect('/');
-}
-
 }

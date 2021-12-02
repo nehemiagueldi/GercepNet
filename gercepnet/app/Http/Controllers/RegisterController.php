@@ -20,7 +20,7 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
-        // return $request->file('image')->store('fotoprofile');
+        return $request->file('image')->store('fotoprofile');
         // ddd($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
