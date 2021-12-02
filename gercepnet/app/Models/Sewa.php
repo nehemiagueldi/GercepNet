@@ -14,10 +14,7 @@ class Sewa extends Model
      *
      * @var string[]
      */
-    protected $fillable = [
-        'jamAwal',
-        'jamAkhir',
-    ];
+    protected $fillable = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,5 +40,10 @@ class Sewa extends Model
     public function facility()
     {
         return $this->belongsTo(Facility::class);
+    }
+
+    public function jam()
+    {
+        return $this->hasMany(jam::class);
     }
 }

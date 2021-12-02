@@ -15,6 +15,7 @@ class CreateJamsTable extends Migration
     {
         Schema::create('jams', function (Blueprint $table) {
             $table->id();
+            $table->string('jamAwalAkhir');
             $table->timestamps();
         });
     }
