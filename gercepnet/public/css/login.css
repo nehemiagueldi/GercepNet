@@ -29,6 +29,7 @@ body{
     background: #DCEBF1;
     border-radius: 30px;
     font-size: 1rem;
+    font-family: 'Louis';
 }
 
 .form-floating>label {
