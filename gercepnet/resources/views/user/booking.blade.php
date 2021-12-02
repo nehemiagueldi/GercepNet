@@ -26,6 +26,14 @@
                       <option>Disabled select</option>
                     </select>
                   </div>
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        Appointment Time 
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control datetimepicker" name="Appointment_time"> 
+                    </div>
+                </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

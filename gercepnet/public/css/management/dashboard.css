@@ -1,9 +1,14 @@
 body {
-    background-color: var(--color-keempat);
+    background-image: url("/image/template-bg/bg-register2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Lemon;
+    color: white;
 }
 
 .minititle {
-    color: var(--color-kelima);
+    color: white;
 }
 
 .title {
