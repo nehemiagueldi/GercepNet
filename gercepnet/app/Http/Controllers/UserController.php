@@ -36,12 +36,15 @@ class UserController extends Controller
     public function updateprofile(Request $request)
     {
         $validatedData = $request->validate([
-            'image' => 'required|image|file|max:1024'
+            'name' => 'required|max:255',
+            'username' => ['required', 'min:3', 'max:255', 'unique:users'],
+            'email' => 'required|email:dns|unique:users',
+            'image' => 'required|image|file|max:1024',
+            'password' => 'required|min:5|max:255',
+            'captcha' => 'required|captcha'
         ]);
 
         // $validatedData = $request->validate()
-
-        User::updating($validatedData);
 
         // UNTUK ME REPLACE FOTO DI STORAGE PUBLIC
         if ($request->file('image')) {
@@ -50,6 +53,8 @@ class UserController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('fotoprofile');
         }
+
+        User::create($validatedData);
 
         return back()->with('success', 'Profile Picture Updated !!!');
     }

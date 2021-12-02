@@ -21,6 +21,7 @@
               <li><a class="dropdown-item" href="/profile"><i class="bi bi-person-circle"></i> My Profile</a></li>
               <li><hr class="dropdown-divider"></li>
             </li>
+            <img src="{{ asset('storage/' . auth()->user()->image) }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
           </ul> 
           <form action="/logout" method="POST" class="">
             @csrf
