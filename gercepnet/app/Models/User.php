@@ -18,12 +18,12 @@ class User extends Authenticatable
      * @var string[]
      */
     // apa yang boleh di isi
-    protected $fillable = [
-        'name',
-        'username',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'username',
+    //     'email',
+    //     'password',
+    // ];
 
     // apa yang tidak boleh di isi
     protected $guarded = ['id'];

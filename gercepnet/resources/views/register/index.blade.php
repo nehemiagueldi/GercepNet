@@ -57,6 +57,24 @@
             </div>    
           @enderror
         </div>
+
+        <div class="form-group mt-4 mb-4">
+          <div class="captcha">
+              <span>{!! captcha_img() !!}</span>
+              <button type="button" class="btn btn-danger" class="reload" id="reload">
+                  &#x21bb;
+              </button>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+            <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" placeholder="Enter Captcha" name="captcha">
+            @error('captcha')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>    
+            @enderror
+        </div>
+        
         <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
       </form>
       <small class="d-block text-center mt-3">Already Registered? <a href="/login">Login</a></small>

@@ -27,7 +27,8 @@ class RegisterController extends Controller
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'image' => 'required|image|file|max:1024',
-            'password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255',
+            'captcha' => 'required|captcha'
             // harus ada file karena tipe filenya "file", max/min itu ukuran filenya satuannya KB, size itu batas ukuran gambar
         ]);
 
