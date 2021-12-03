@@ -15,12 +15,13 @@ class Facility extends Model
      * @var string[]
      */
     protected $fillable = [
-        'namaFasilitas',
+        'nameFasilitas',
         'descFasilitas',
         'jenisFasilitas',
         'fotoFasilitas',
     ];
 
+    // protected $guarded = ['id'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -35,7 +36,7 @@ class Facility extends Model
      */
     protected $casts = [];
 
-    protected $guarded = ['id'];
+
 
     public function sewa()
     {

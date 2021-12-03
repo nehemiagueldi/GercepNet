@@ -13,7 +13,7 @@ class FacilityController extends Controller
 {
 
     // Untuk function CRUD fasilitas
-    
+
     public function index()
     {
         $facility = DB::table('facilities')->get();
@@ -22,38 +22,39 @@ class FacilityController extends Controller
             "title" => "List Facility"
         ]);
     }
-    
+
     public function create()
     {
         return view('management.addM', [
             "title" => "Add Facility"
         ]);
     }
-    
+
     public function store(Request $request)
     {
         // return $request->file('image')->store('fotofasilitas');
 
         $validatedData = $request->validate([
-            'nameFasilitas' => 'required|max:255',
-            'descFasilitas' => 'required',
+            'nameFasilitas' => 'required|min:4|max:255',
+            'descFasilitas' => 'required|min:4',
             'jenisFasilitas' => 'required|max:255',
-            'image' => 'required|image|file|max:1024',
+            'fotoFasilitas' => 'required|image|file|max:1024'
             // harus ada file karena tipe filenya "file", max/min itu ukuran filenya satuannya KB, size itu batas ukuran gambar
         ]);
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('fotofasilitas');
+        if ($request->file('fotoFasilitas')) {
+            $validatedData['fotoFasilitas'] = $request->file('fotoFasilitas')->store('fotofasilitas');
         }
 
-        DB::table('facilities')->insert([
-            'namaFasilitas' => $request->namaFasilitas,
-            'descFasilitas' => $request->descFasilitas,
-            'jenisFasilitas' => $request->jenisFasilitas,
-            'fotoFasilitas' => $request->fotoFasilitas,
-        ]);
+        Facility::create($validatedData);
+        // DB::table('facilities')->insert([
+        //     'namaFasilitas' => $request->namaFasilitas,
+        //     'descFasilitas' => $request->descFasilitas,
+        //     'jenisFasilitas' => $request->jenisFasilitas,
+        //     'fotoFasilitas' => $request->image
+        // ]);
         return redirect('/facility');
     }
-    
+
     public function edit($id)
     {
         $facility = DB::table('facilities')->where('id', $id)->get();
@@ -62,7 +63,7 @@ class FacilityController extends Controller
             "title" => "Edit Facility"
         ]);
     }
-    
+
     public function update(Request $request)
     {
         DB::table('facilities')->where('id', $request->id)->update([
@@ -72,22 +73,22 @@ class FacilityController extends Controller
         ]);
         return redirect('/facility');
     }
-    
+
     public function delete($id)
     {
         DB::table('facilities')->where('id', $id)->delete();
         return redirect('/facility');
     }
-    
-    
-    
+
+
+
     public function dashboard()
     {
         return view('management.dashboard', [
             "title" => "Dashboard Management"
         ]);
     }
-    
+
     public function requestlist()
     {
         $request = DB::table('sewas')->get();
@@ -99,14 +100,12 @@ class FacilityController extends Controller
         // ->with('Sewa', $sewa);
     }
 
-    public function requeststore(Request $request){
+    public function requeststore(Request $request)
+    {
 
         DB::table('sewas')->where('id', $request->id)->update([
             'status' => $request->status
         ]);
         return redirect('/request');
-
     }
-
-    
 }

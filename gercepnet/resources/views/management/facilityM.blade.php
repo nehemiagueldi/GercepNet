@@ -21,7 +21,7 @@
 		</thead>
 		@foreach($facilities as $f)
 		<tr>
-			<td>{{ $f->namaFasilitas}}</td>
+			<td>{{ $f->nameFasilitas}}</td>
 			<td>{{ $f->descFasilitas}}</td>
 			<td>{{ $f->jenisFasilitas}}</td>
 			<td>

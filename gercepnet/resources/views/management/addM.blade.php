@@ -9,21 +9,37 @@
 
 @section('container')
     <h1>Facility Listing</h1>
-        <form action="/facility/store" method="post" enctype="multipart/form-data">
-		{{ csrf_field() }}
-		Nama Fasilitas <input type="text" name="namaFasilitas" required="required"> <br/>
-		Deskripsi <input type="text" name="descFasilitas" required="required"> <br/>
-		Jenis <input type="text" name="jenisFasilitas" required="required"> <br/>
+        <form action="/facility/store" method="POST" enctype="multipart/form-data">
+					@csrf
+		{{-- {{ csrf_field() }} --}}
+			Nama Fasilitas <input type="text" class="@error('nameFasilitas') is-invalid @enderror" name="nameFasilitas" id="nameFasilitas" value="{{ old('nameFasilitas') }}"> <br/>
+			@error('nameFasilitas')
+			<div class="invalid-feedback">
+				{{ $message }}
+			</div>    
+			@enderror
+			Deskripsi <input type="text" name="descFasilitas" id="descFasilitas" value="{{ old('descFasilitas') }}"> <br/>
+			@error('descFasilitas')
+			<div class="invalid-feedback">
+				{{ $message }}
+			</div>    
+			@enderror
+			Jenis <input type="text" name="jenisFasilitas" id="jenisFasilitas" value="{{ old('jenisFasilitas') }}"> <br/>
+			@error('jenisFasilitas')
+			<div class="invalid-feedback">
+				{{ $message }}
+			</div>    
+			@enderror
 		<div class="mb-3">
 			<label for="image" class="form-label">Foto Fasilitas</label>
 			<img class= "img-preview img-fluid mb-3 col-sm-5">
-			<input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
-			@error('image')
+			<input class="form-control @error('fotoFasilitas') is-invalid @enderror" type="file" id="fotoFasilitas" name="fotoFasilitas" onchange="previewImage()">
+			@error('fotoFasilitas')
 			  <div class="invalid-feedback">
 				{{ $message }}
 			  </div>    
 			@enderror
 		  </div>
-		<input type="submit" value="Simpan Data">
+			<button class="w-100 btn btn-lg btn-register mt-3" type="submit">Submit Data</button>
 	</form>
 @endsection
