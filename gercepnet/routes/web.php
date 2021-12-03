@@ -70,6 +70,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/dashboard', [AdminController::class,  'dashboard']);
     Route::get('admin/userlist', [AdminController::class,  'userlist']);
     Route::get('admin/userlist/delete/{id}', [AdminController::class, 'userD']);
+    Route::get('admin/userlist/edit/{id}', [AdminController::class, 'userEshow']);
+    Route::post('admin/userlist/edit/{id}', [AdminController::class, 'userEstore']);
     Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
     Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
 });

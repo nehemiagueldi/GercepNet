@@ -7,7 +7,6 @@
 
 @section('container')
     <h1>User List</h1>
-    <a href="#" class="btn-add float-end mb-3"> Add New</a> 
 	<table class="table p-5">
 		<thead>
 			<tr>
@@ -23,9 +22,9 @@
 			<td>{{ $u->email}}</td>
 			<td>{{ $u->role}}</td>
 			<td>
-				<a href="#" class="operation">
+				<a href="userlist/edit/{{ $u->id }}" class="operation">
 					<i class="bi bi-pencil-square"></i>
-				</a>
+				</a> 
 				
 				<a href="userlist/delete/{{ $u->id }}" class="operation">
 					<i class="bi bi-trash"></i>
