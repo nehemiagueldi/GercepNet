@@ -7,7 +7,7 @@
 @section('container')
 <div class="row justify-content-center">
   <h1 class="title mb-5">GERCEPNET</h1>
-  <div class="col-md-4 login">
+  <div class="col-md-6 col-lg-4 col-sm-8 login">
     @if (session()->has('success'))    
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       {{ session('success') }}

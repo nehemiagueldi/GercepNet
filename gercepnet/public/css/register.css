@@ -12,6 +12,7 @@ body{
     padding: 4rem 2rem;
     border-radius: 30px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4rem;
 }
 
 .title {
@@ -43,4 +44,19 @@ body{
     color: white;
     background-color: var(--color-pertama);
     box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+}
+
+@media (max-width: 767px) {
+    .title{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title{
+        font-size: 3rem;
+    }
+    .row {
+        --bs-gutter-x: -5rem;
+    }
 }

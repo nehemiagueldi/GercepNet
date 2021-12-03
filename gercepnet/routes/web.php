@@ -68,10 +68,18 @@ Route::group(['middleware' => 'management'], function () {
 // ADMIN
 Route::group(['middleware' => 'admin'], function () {
 
-    Route::get('/admin/dashboard', [AdminController::class,  'dashboard']);
+    Route::get('admin/dashboard', [AdminController::class,  'dashboard']);
     Route::get('admin/userlist', [AdminController::class,  'userlist']);
     Route::get('admin/userlist/delete/{id}', [AdminController::class, 'userD']);
-    Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
+
+    
+    Route::get('admin/facility', [AdminController::class,  'index']);
+    Route::get('admin/facility/add', [AdminController::class,  'create']);
+    Route::post('admin/facility/store', [AdminController::class, 'store']);
+    Route::get('admin/facility/edit/{id}', [AdminController::class, 'edit']);
+    Route::post('admin/facility/update', [AdminController::class, 'update']);
+    Route::get('admin/facility/delete/{id}', [AdminController::class, 'delete']);
+
     Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
 });
 

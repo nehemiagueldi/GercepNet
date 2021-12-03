@@ -62,11 +62,4 @@ trait FacilityTrait
 
 
     // REQUEST
-
-    public function requestlist()
-    {
-        return view('management.requestM', [
-            "title" => "Request Listing"
-        ]);
-    }
 }

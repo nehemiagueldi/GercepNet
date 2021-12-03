@@ -9,7 +9,7 @@
           <a class="nav-link active navbar-text" aria-current="page" href="userlist" {{ ($title === "user") ? 'active' : '' }}>User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="facilitylist" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
+            <a class="nav-link" href="facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="requestlist" {{ ($title === "request") ? 'active' : '' }}>Request</a>
