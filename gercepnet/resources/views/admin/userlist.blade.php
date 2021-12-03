@@ -27,7 +27,7 @@
 					<i class="bi bi-pencil-square"></i>
 				</a>
 				
-				<a href="delete/{{ $u->id }}" class="operation">
+				<a href="userlist/delete/{{ $u->id }}" class="operation">
 					<i class="bi bi-trash"></i>
 				</a>
 			</td>

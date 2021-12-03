@@ -12,7 +12,7 @@
                 <a class="nav-link " href="/booking" {{ ($title === "Booking") ? 'active' : '' }}>Booking</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/request" {{ ($title === "Request Listing") ? 'active' : '' }}>Request</a>
+              <a class="nav-link" href="/request/{{auth()->user()->id}}" {{ ($title === "Request Listing") ? 'active' : '' }}>Request</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/user/dashboard" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

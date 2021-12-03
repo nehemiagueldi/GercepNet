@@ -17,9 +17,12 @@ class SewaController extends Controller
      */
     public function index()
     {
+        $facility = DB::table('facilities')->get();
         $sewa = Sewa::with('users')->get();
+        
         // $sewa = DB::table('sewa')->get();
         return view('user/booking', [
+            'facilities' => $facility,
             'sewas' => $sewa,
             "title" => "Booking"
         ]);
@@ -34,15 +37,26 @@ class SewaController extends Controller
     public function create(Request $request)
     {
         // $sewa = DB::table('users')->where('id', $request->id)->get();
-        $sewa = Sewa::with('users')->get();
-
-            // @dd($sewa);
+        // $sewa = Sewa::with('users')->where('id', $request->id)->get();
+            // @dd(namaFasilitas);
+            
             DB::table('sewas')->insert([
-                'user_id' => $request->id,
+                'user_id' => auth()->user()->id,
+                'username' => auth()->user()->username,
+                'namaFasilitas' => $request->namaFasilitas,
                 'jam_mulai' => $request->jam_mulai,
                 'jam_selesai' => $request->jam_selesai,
             ]);
         return redirect('/booking');
+    }
+
+    public function request($id)
+    {
+        $sewa = Sewa::with('users')->where('user_id', $id)->get();
+        return view('user/request', [
+            'sewas' => $sewa,
+            "title" => "Booking"
+        ]);
     }
 
 
