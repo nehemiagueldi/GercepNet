@@ -29,12 +29,14 @@ class AdminController extends Controller
     public function userD($id)
     {
         DB::delete('delete from users where id = ?',[$id]);
-        return redirect('userlist');
+        return redirect('admin/userlist');
     }
 
     public function facilitylist()
     {
+        $facilities = DB::table('facilities')->get();
         return view('admin/facilitylist', [
+            'facilities' => $facilities,
             "title" => "Facility List"
         ]);
     }
