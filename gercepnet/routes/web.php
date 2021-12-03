@@ -68,10 +68,10 @@ Route::group(['middleware' => 'management'], function () {
 Route::group(['middleware' => 'admin'], function () {
 
     Route::get('/admin/dashboard', [AdminController::class,  'dashboard']);
-    Route::get('userlist', [AdminController::class,  'userlist']);
-    Route::get('delete/{id}', [AdminController::class, 'userD']);
-    Route::get('facilitylist', [AdminController::class,  'facilitylist']);
-    Route::get('requestlist', [AdminController::class,  'requestlist']);
+    Route::get('admin/userlist', [AdminController::class,  'userlist']);
+    Route::get('admin/userlist/delete/{id}', [AdminController::class, 'userD']);
+    Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
+    Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
 });
 
 // Route::get('adminhome', function () {
