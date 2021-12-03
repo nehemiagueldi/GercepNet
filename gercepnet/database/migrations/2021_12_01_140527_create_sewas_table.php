@@ -21,6 +21,7 @@ class CreateSewasTable extends Migration
             $table->string('namaFasilitas');
             $table->dateTime('jam_mulai');
             $table->dateTime('jam_selesai');
+            $table->smallInteger('status')->default(0);
             $table->timestamps();
         });
     }

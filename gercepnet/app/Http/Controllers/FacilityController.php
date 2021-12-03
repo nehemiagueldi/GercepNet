@@ -73,8 +73,22 @@ class FacilityController extends Controller
 
     public function requestlist()
     {
-        return view('management.requestM', [
-            "title" => "Request Listing"
+        $request = DB::table('sewas')->get();
+        // $sewa = DB::table('sewa')->get();
+        return view('management/requestM', [
+            'sewas' => $request,
+            "title" => "Booking"
         ]);
+        // ->with('Sewa', $sewa);
     }
+
+    public function requeststore(Request $request){
+
+        DB::table('sewas')->where('id', $request->id)->update([
+            'status' => $request->status
+        ]);
+        return redirect('/request');
+
+    }
+
 }

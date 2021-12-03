@@ -46,7 +46,6 @@ Route::group(['middleware' => 'user'], function () {
     Route::get('/booking', [SewaController::class, 'index']);
     Route::post('/booking/request', [SewaController::class, 'create']);
     Route::get('/request/{user_id}', [SewaController::class, 'request']);
-
 });
 
 
@@ -61,7 +60,9 @@ Route::group(['middleware' => 'management'], function () {
     Route::post('/facility/update', [FacilityController::class, 'update']);
     Route::get('/facility/delete/{id}', [FacilityController::class, 'delete']);
 
-    Route::get('/management/request', [FacilityController::class, 'requestlist']);
+    Route::get('/request', [FacilityController::class, 'requestlist']);
+    Route::post('/request/store', [FacilityController::class, 'requeststore']);
+    
 });
 
 // ADMIN

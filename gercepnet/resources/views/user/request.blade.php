@@ -16,6 +16,7 @@
             <th>nama fasilitas</th>
             <th>jam mulai</th>
             <th>jam selesai</th>
+            <th>status</th>
           </tr>
         </thead>
         @php($count = 1)
@@ -27,6 +28,15 @@
           <td>{{$s->namaFasilitas}}</td>
           <td>{{$s->jam_mulai}}</td>
           <td>{{$s->jam_selesai}}</td>
+          <td> 
+            @if($s->status == 0)
+                <span class="label label-primary">Pending</span>
+            @elseif($s->status == 1)
+                <span class="label label-success">Approved</span>
+            @else
+                <span class="label label-danger">Rejected</span>
+            @endif
+            </td>
         </tr>
         @php($count++)
         @endforeach
