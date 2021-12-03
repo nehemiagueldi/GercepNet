@@ -9,7 +9,7 @@
               <a class="nav-link active" aria-current="page" href="/facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/management/request" {{ ($title === "request") ? 'active' : '' }}>Request</a>
+              <a class="nav-link" href="/request" {{ ($title === "request") ? 'active' : '' }}>Request</a>
             </li>
           </ul>
         </div>
