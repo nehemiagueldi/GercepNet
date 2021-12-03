@@ -67,7 +67,7 @@ class FacilityController extends Controller
     public function update(Request $request)
     {
         DB::table('facilities')->where('id', $request->id)->update([
-            'namaFasilitas' => $request->namaFasilitas,
+            'nameFasilitas' => $request->nameFasilitas,
             'descFasilitas' => $request->descFasilitas,
             'jenisFasilitas' => $request->jenisFasilitas,
         ]);

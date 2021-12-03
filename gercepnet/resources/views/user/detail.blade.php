@@ -1,6 +1,7 @@
 @extends('template.header')
 
 @section('custom_css')
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 @endsection
 @include('navbar.usernavbar')
 
@@ -11,7 +12,7 @@
         <h1 class="card-title">{{ $title }}</h1>
 
         <article>
-            <p class="card-text">{{ $facility->namaFasilitas }}</p>
+            <p class="card-text">{{ $facility->nameFasilitas }}</p>
             <p class="card-text">{{ $facility->jenisFasilitas }}</p>
             <p class="card-text">{{ $facility->descFasilitas }}</p>
         </article>

@@ -3,6 +3,7 @@
 @section('custom_css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 
 @endsection
 @include('navbar.usernavbar')

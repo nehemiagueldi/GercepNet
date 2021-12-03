@@ -21,7 +21,7 @@
         <form action="/facility/update" method="post">
 		{{ csrf_field() }}
         <input type="hidden" name="id" value="{{ $f->id }}"> <br/>
-	    Nama Fasilitas <input type="text" required="required" name="namaFasilitas" value="{{ $f->namaFasilitas }}"> <br/>
+	    Nama Fasilitas <input type="text" required="required" name="nameFasilitas" value="{{ $f->nameFasilitas }}"> <br/>
 	    Deskripsi Fasilitas <input type="text" required="required" name="descFasilitas" value="{{ $f->descFasilitas }}"> <br/>
 	    Jenis Fasilits <input type="text" required="required" name="jenisFasilitas" value="{{ $f->jenisFasilitas }}"> <br/>
 	    <input type="submit" value="Simpan Data">
