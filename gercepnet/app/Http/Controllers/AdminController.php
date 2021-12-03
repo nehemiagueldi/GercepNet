@@ -60,7 +60,13 @@ class AdminController extends Controller
         return redirect('/admin/facility');
     }
 
+    public function delete($id)
+    {
+        DB::table('facilities')->where('id', $id)->delete();
+        return redirect('/admin/facility');
+    }
 
+    // dashboard
     public function dashboard()
     {
         return view('admin.dashboard', [
@@ -78,11 +84,6 @@ class AdminController extends Controller
         ]);
     }
 
-    public function delete($id)
-    {
-        DB::table('facilities')->where('id', $id)->delete();
-        return redirect('/admin/facility');
-    }
     
 
     public function userEshow($id)

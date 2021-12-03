@@ -71,7 +71,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [AdminController::class,  'dashboard']);
     Route::get('admin/userlist', [AdminController::class,  'userlist']);
     Route::get('admin/userlist/delete/{id}', [AdminController::class, 'userD']);
-    // Route::get('admin/facility', [AdminController::class,  'index']);
+
+    Route::get('admin/facility', [AdminController::class,  'index']);
     Route::get('admin/facility/add', [AdminController::class,  'create']);
     Route::post('admin/facility/store', [AdminController::class, 'store']);
     Route::get('admin/facility/edit/{id}', [AdminController::class, 'edit']);
@@ -80,8 +81,8 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('admin/userlist/edit/{id}', [AdminController::class, 'userEshow']);
     Route::post('admin/userlist/edit/{id}', [AdminController::class, 'userEstore']);
-    Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
     Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
+    // Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
 });
 
 // Route::get('adminhome', function () {
