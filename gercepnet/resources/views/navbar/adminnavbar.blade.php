@@ -6,13 +6,13 @@
       <div class="" id="navbarScroll">
         <ul class="navbar-nav justify-content-center navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item active">
-          <a class="nav-link active navbar-text" aria-current="page" href="userlist" {{ ($title === "user") ? 'active' : '' }}>User</a>
+          <a class="nav-link active navbar-text" aria-current="page" href="/admin/userlist" {{ ($title === "user") ? 'active' : '' }}>User</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="requestlist" {{ ($title === "request") ? 'active' : '' }}>Request</a>
+            <a class="nav-link" href="/admin/requestlist" {{ ($title === "request") ? 'active' : '' }}>Request</a>
           </li>
         </ul>
       </div>
