@@ -17,7 +17,8 @@ class CreateSewasTable extends Migration
             $table->id();
             // $table->foreignId('fasilitas_id');
             $table->foreignId('user_id');
-            // $table->foreignId('jam_id');
+            $table->string('username');
+            $table->string('namaFasilitas');
             $table->dateTime('jam_mulai');
             $table->dateTime('jam_selesai');
             $table->timestamps();

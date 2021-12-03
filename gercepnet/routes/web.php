@@ -45,6 +45,8 @@ Route::group(['middleware' => 'user'], function () {
     Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
     Route::get('/booking', [SewaController::class, 'index']);
     Route::post('/booking/request', [SewaController::class, 'create']);
+    Route::get('/request/{user_id}', [SewaController::class, 'request']);
+
 });
 
 
