@@ -9,6 +9,7 @@
 @include('navbar.usernavbar')
 
 @section('container')
+{{-- @dd($sewa) --}}
     <h1>{{ $title }}</h1>
 
         <div class="form-floating">
@@ -53,7 +54,7 @@
                 @foreach($sewas as $s)
                 <tr>
                   <td>{{ $s->id}}</td>
-                  <td>{{$s->user->username}}</td>
+                  {{-- <td>{{$s->users->username}}</td> --}}
                   <td>{{ $s->jam_mulai}}</td>
                   <td>{{ $s->jam_selesai}}</td>
                 </tr>

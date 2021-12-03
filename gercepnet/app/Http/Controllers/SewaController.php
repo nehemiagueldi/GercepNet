@@ -22,7 +22,8 @@ class SewaController extends Controller
         return view('user/booking', [
             'sewas' => $sewa,
             "title" => "Booking"
-        ])->with('Sewa', $sewa);
+        ]);
+        // ->with('Sewa', $sewa);
     }
 
     /**
@@ -32,10 +33,15 @@ class SewaController extends Controller
      */
     public function create(Request $request)
     {
-        DB::table('sewas')->insert([
-            'jam_mulai' => $request->jam_mulai,
-            'jam_selesai' => $request->jam_selesai,
-        ]);
+        // $sewa = DB::table('users')->where('id', $request->id)->get();
+        $sewa = Sewa::with('users')->get();
+
+            // @dd($sewa);
+            DB::table('sewas')->insert([
+                'user_id' => $request->id,
+                'jam_mulai' => $request->jam_mulai,
+                'jam_selesai' => $request->jam_selesai,
+            ]);
         return redirect('/booking');
     }
 
