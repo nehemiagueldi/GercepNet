@@ -41,15 +41,15 @@ class FacilityController extends Controller
             'image' => 'required|image|file|max:1024',
             // harus ada file karena tipe filenya "file", max/min itu ukuran filenya satuannya KB, size itu batas ukuran gambar
         ]);
-        // if ($request->file('image')) {
-        //     $validatedData['image'] = 
-            $request->file('image')->store('fotofasilitas');
-        // }
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('fotofasilitas');
+        }
 
         DB::table('facilities')->insert([
             'namaFasilitas' => $request->namaFasilitas,
             'descFasilitas' => $request->descFasilitas,
             'jenisFasilitas' => $request->jenisFasilitas,
+            'fotoFasilitas' => $request->fotoFasilitas,
         ]);
         return redirect('/facility');
     }

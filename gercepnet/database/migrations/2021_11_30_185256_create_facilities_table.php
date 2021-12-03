@@ -18,6 +18,7 @@ class CreateFacilitiesTable extends Migration
             $table->string('namaFasilitas');
             $table->text('descFasilitas');
             $table->string('jenisFasilitas');
+            $table->string('fotoFasilitas');
             $table->timestamps();
         });
     }

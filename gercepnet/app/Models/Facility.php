@@ -18,6 +18,7 @@ class Facility extends Model
         'namaFasilitas',
         'descFasilitas',
         'jenisFasilitas',
+        'fotoFasilitas',
     ];
 
     /**
