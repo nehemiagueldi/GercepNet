@@ -1,9 +1,6 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/user/dashboard.css')}}">
-<link rel="stylesheet" href="{{asset('css/navbar/navbar-u.css')}}">
-<link rel="stylesheet" href="{{asset('css/template/main.css')}}">
 
 @endsection
 @include('navbar.usernavbar')

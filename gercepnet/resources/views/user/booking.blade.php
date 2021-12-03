@@ -1,7 +1,6 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/homeuser.css')}}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
