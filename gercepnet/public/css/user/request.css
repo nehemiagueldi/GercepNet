@@ -1,0 +1,48 @@
+body{
+    background-image: url("/image/template-bg/k-4.jpg");
+}
+
+.box{
+    background-color: rgba(255,255,255,0.7);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.title-f{
+    font-size: 5rem;
+    color: white;
+    text-shadow: -4px 2px 18px #CE218A;
+    margin-bottom: 2rem;
+}
+
+tbody{
+    font-family: 'Louis';
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+
+
+@media (max-width: 767px) {  
+    .title-f{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 575px) {  
+   .title-f{
+       font-size: 2rem;
+   }
+   tr{
+       font-size: 80%;
+   }
+}
+
+@media (max-width: 432px) {  
+    tr{
+        font-size: 60%;
+    }
+ }

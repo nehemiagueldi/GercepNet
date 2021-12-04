@@ -1,0 +1,71 @@
+body {
+    background-image: url("/image/template-bg/k-8.jpg");
+}
+
+.box{
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 25px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 40%;
+    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.title-f{
+    font-size: 5rem;
+    color: white;
+    text-shadow: -4px 2px 18px #08E8FF;
+    margin-bottom: 2rem;
+}
+
+.btn-dashboard {
+    padding: 2px 15px;
+    box-shadow: -4px 2px 18px #08E8FF;
+    border: none;
+    transition: ease-in-out 0.4s;
+    /* margin-right: 3rem; */
+}
+
+.btn-dashboard:hover{
+    transform: translateY(-2px);
+}
+
+.btn-dashboard a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.input{
+    background-color: lightslategray;
+}
+
+@media (max-width: 996px) {  
+    .box{
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 767px) {  
+    .title-f{
+        font-size: 3rem;
+    }
+    .box{
+        width: 80%;
+    }
+
+}
+@media (max-width: 575px) {  
+   .title-f{
+       font-size: 2rem;
+   }
+
+}
+
+@media (max-width: 432px) {  
+
+ }

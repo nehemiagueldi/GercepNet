@@ -1,0 +1,77 @@
+body {
+    background-image: url("/image/template-bg/bg-dashboard2.jpg");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    font-family: Lemon;
+    color: white;
+}
+
+
+.title {
+    font-size: 10rem;
+    padding-top: 3rem;
+    text-shadow: -4px 2px 18px #CE218A;
+}
+
+.arrow{
+    font-size: 8rem;
+    text-shadow: -4px 2px 18px #CE218A;
+
+}
+
+.btn-dashboard {
+    padding: 2px 15px;
+    box-shadow: -4px 2px 18px #CE218A;
+    border: none;
+    transition: ease-in-out 0.4s;
+}
+
+.btn-dashboard:hover{
+    transform: translateY(-2px);
+}
+
+.btn-dashboard a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 5rem;
+    }
+    .button {
+        display: grid;
+        margin-top: 5rem;
+        width: 70%;
+        justify-content: center;
+    }
+    .btn-login {
+        margin-right: 0;
+    }
+
+    .btn-signup {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 588px) {
+    .container {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .minititle {
+        font-size: 1rem;
+    }
+    .btn-login {
+        padding: 0.5rem 3rem;
+    }
+
+    .btn-signup {
+        padding: 0.5rem 3rem;
+    }
+}

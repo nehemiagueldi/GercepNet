@@ -2,15 +2,18 @@
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/management/facility.css')}}">
-<link rel="stylesheet" href="{{asset('css/navbar/navbar-m.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 
 @endsection
 @include('navbar.managenavbar')
 
 @section('container')
-    <h1>Facility Listing</h1> <br>
-	    <a href="/facility/add" class="btn-add float-end mb-3"> Add New</a> 
-	<table class="table p-5">
+    <h1 class="title-f">Facility Listing</h1>
+		<button class="btn-dashboard mb-4">
+			<a href="/facility/add"> Add New</a> 
+		</button>
+		<div class="respon">
+		<table class="table p-5 box text-center">
 		<thead>
 			<tr>
 				<th>Nama Fasilitas</th>
@@ -36,4 +39,5 @@
 		</tr>
 		@endforeach
 	</table>
+		</div>
 @endsection

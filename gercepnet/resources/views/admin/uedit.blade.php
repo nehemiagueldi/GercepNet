@@ -1,54 +1,54 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{asset('css/admin/edit.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 @endsection
+@include('navbar.adminnavbar')
 
 @section('container')
-    <a href="/admin/userlist">KEMBALI</a>
-    <h1>Edit User</h1>
-    <div class="col-lg-5 registrasi">
-        <main class="form-registration">
+    <h1 class="title-f">Edit User</h1>
+    <div class="box mx-auto">
+	    <div class="row form-group justify-content-center ">
             @foreach($users as $u)
-            <form action="/admin/userlist/edit/{{ $u->id }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-floating">
-                    <input type="text" name="id" class="input form-control" id="id" value="{{ $u->id }}" readonly>
-                    <label for="id">ID</label>
+            <a href="/admin/userlist" class="float-end text-end mb-3" > <i class="bi bi-x-square text-dark"></i></a>
+            <form action="/admin/userlist/store" method="POST">
+                {{ csrf_field() }}
+                {{-- <div class="text-start mb-1">
+                    ID 
                 </div>
-
-                <div class="form-floating">
-                    <input type="text" name="name" class="input form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" value="{{ $u->name }}">
-                    <label for="name">Name</label>
-                    @error('name')
+                    <input type="text" name="id" class="input form-control" id="id" value="{{ $u->id }}" readonly> --}}
+                <div class="text-start mb-1">
+                    Nama 
+                </div>
+                    <input type="text" name="name" class="input form-control" id="name" placeholder="Name" value="{{ $u->name }}">
+                    {{-- @error('name')
                         <div class="invalid-feedback">
                         {{ $message }}
                         </div>    
-                    @enderror
+                    @enderror --}}
+                <div class="text-start mb-1">
+                    Username
                 </div>
-
-                <div class="form-floating">
-                    <input type="text" name="username" class="input form-control @error('username') is-invalid @enderror" id="username" placeholder="Username" value="{{ $u->username }}">
-                    <label for="name">Username</label>
-                    @error('username')
+                    <input type="text" name="username" class="input form-control" id="username" placeholder="Username" value="{{ $u->username }}">
+                    {{-- @error('username')
+                        <div class="invalid-feedback">
+                        {{ $message }}
+                        </div>
+                    @enderror --}}
+                <div class="text-start mb-1">
+                    Email Address
+                </div>
+                    <input type="email" name="email" class="input form-control" id="email" placeholder="name@example.com" value="{{ $u->email }}">
+                    {{-- @error('email')
                         <div class="invalid-feedback">
                         {{ $message }}
                         </div>    
-                    @enderror
-                </div>
-
-                <div class="form-floating">
-                    <input type="email" name="email" class="input form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" value="{{ $u->email }}">
-                    <label for="floatingInput">Email address</label>
-                    @error('email')
-                        <div class="invalid-feedback">
-                        {{ $message }}
-                        </div>    
-                    @enderror
-                </div>
-                <button class="w-100 btn btn-lg btn-register mt-3" type="submit">Edit</button>
+                    @enderror --}}
+                <button class="btn-dashboard mt-3" type="submit">Edit</button>
             </form>
             @endforeach
-        </main>
+        </div>
     </div>
+
 @endsection

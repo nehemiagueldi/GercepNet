@@ -29,6 +29,20 @@ class SewaController extends Controller
         // ->with('Sewa', $sewa);
     }
 
+    public function show($id)
+    {
+        $facility = DB::table('facilities')->where('id', $id)->get();
+        $sewa = Sewa::with('users')->get();
+        
+        // $sewa = DB::table('sewa')->get();
+        return view('user/custombooking', [
+            'facilities' => $facility,
+            'sewas' => $sewa,
+            "title" => "Booking"
+        ]);
+        // ->with('Sewa', $sewa);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +62,7 @@ class SewaController extends Controller
                 'jam_selesai' => $request->jam_selesai,
                 // 'status' => "Waiting"
             ]);
-        return redirect('/booking');
+        return redirect('/user/dashboard');
     }
 
     public function request($id)
@@ -78,11 +92,6 @@ class SewaController extends Controller
      * @param  \App\Models\Sewa  $sewa
      * @return \Illuminate\Http\Response
      */
-    public function show(Sewa $sewa)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *

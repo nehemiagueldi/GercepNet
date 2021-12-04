@@ -95,16 +95,22 @@ class AdminController extends Controller
         ]);
     }
 
-    public function userEstore($request)
+    public function userEstore(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'username' => ['required', 'min:3', 'max:255', 'unique:users'],
-            'email' => 'required|email:dns|unique:users',
-            'image' => 'required|image|file|max:1024'
-        ]);
+        @dd($request);
+        // $validatedData = $request->validate([
+        //     'name' => 'required|max:255',
+        //     'username' => ['required'],
+        //     'email' => 'required|email:dns|unique:users',
+        //     'image' => 'required|image|file|max:1024'
+        // ]);
 
-        User::create($validatedData);
+        // User::create($validatedData);
+        DB::table('users')->where('id', $request->id)->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+        ]);
 
         return redirect('admin/userlist');
     }

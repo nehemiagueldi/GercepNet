@@ -1,13 +1,15 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{asset('css/admin/user.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 @endsection
 @include('navbar.adminnavbar')
 
 @section('container')
-    <h1>User List</h1>
-	<table class="table p-5">
+    <h1 class="title-f">User List</h1>
+	<div class="table-responsive-md">
+	<table class="table p-5 box text-center">
 		<thead>
 			<tr>
 				<th>Nama</th>
@@ -33,4 +35,5 @@
 		</tr>
 		@endforeach
 	</table>
+</div>
 @endsection

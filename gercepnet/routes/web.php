@@ -42,10 +42,12 @@ Route::group(['middleware' => 'user'], function () {
 
     Route::get('/user/dashboard', [UserController::class, 'dashboard']);
     Route::get('/userlisting', [UserFacility::class, 'index']);
-    Route::get('/userdetail/{facility:namaFasilitas}', [UserFacility::class, 'show']);
+    Route::get('/userdetail/{facility:nameFasilitas}', [UserFacility::class, 'show']);
     Route::get('/booking', [SewaController::class, 'index']);
+    Route::get('/booking/add/{facility:id}', [SewaController::class, 'show']);
     Route::post('/booking/request', [SewaController::class, 'create']);
     Route::get('/request/{user_id}', [SewaController::class, 'request']);
+    
 });
 
 
@@ -80,7 +82,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/facility/delete/{id}', [AdminController::class, 'delete']);
 
     Route::get('admin/userlist/edit/{id}', [AdminController::class, 'userEshow']);
-    Route::post('admin/userlist/edit/{id}', [AdminController::class, 'userEstore']);
+    Route::post('admin/userlist/store', [AdminController::class, 'userEstore']);
     Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
     // Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
 });

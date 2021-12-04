@@ -1,30 +1,36 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/facility-m.css')}}">
-<link rel="stylesheet" href="{{asset('css/navbar/navbar-a.css')}}">
+<link rel="stylesheet" href="{{asset('css/management/edit.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 
 @endsection
-@include('navbar.managenavbar')
+@include('navbar.adminnavbar')
 
 @section('container')
-
-	<h3>Edit Pegawai</h3>
- 
-	<a href="/admin/facility"> Kembali</a>
-	
-	<br/>
-	<br/>
- 
-	@foreach($facilities as $f)
-	<h1>Facility Listing</h1>
-        <form action="/admin/facility/update" method="post">
-		{{ csrf_field() }}
-        <input type="hidden" name="id" value="{{ $f->id }}"> <br/>
-	    Nama Fasilitas <input type="text" required="required" name="namaFasilitas" value="{{ $f->namaFasilitas }}"> <br/>
-	    Deskripsi Fasilitas <input type="text" required="required" name="descFasilitas" value="{{ $f->descFasilitas }}"> <br/>
-	    Jenis Fasilits <input type="text" required="required" name="jenisFasilitas" value="{{ $f->jenisFasilitas }}"> <br/>
-	    <input type="submit" value="Simpan Data">
-	</form>
-	@endforeach
+<h1 class="title-f">Facility Listing</h1>
+<div class="box mx-auto">
+	<div class="row form-group justify-content-center ">
+		@foreach($facilities as $f)
+		<form action="/facility/update" method="post">
+			{{ csrf_field() }}
+			<a href="/facility" class="float-end"> <i class="bi bi-x-square text-dark"></i></a>
+			<input class="form-control mb-3" type="hidden" name="id" value="{{ $f->id }}"> <br/>
+			<div class="text-start mb-1">
+				Nama Fasilitas 
+			</div>
+			<input class="form-control mb-3" type="text" required="required" name="nameFasilitas" value="{{ $f->nameFasilitas }}">
+			<div class="text-start mb-1">
+				Deskripsi 
+			</div> 
+			<input class="form-control mb-3" type="text" required="required" name="descFasilitas" value="{{ $f->descFasilitas }}">
+			<div class="text-start mb-1">
+				Jenis Fasilitas
+			</div>
+			<input class="form-control mb-3" type="text" required="required" name="jenisFasilitas" value="{{ $f->jenisFasilitas }}">
+			<input class="btn-dashboard mt-3" type="submit" value="Simpan Data">
+		</form>
+		@endforeach
+		</div>
+	</div>
 @endsection

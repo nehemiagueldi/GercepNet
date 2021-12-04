@@ -1,0 +1,36 @@
+body{
+    background-image: url("/image/template-bg/bg-fasilitas2.jpg");
+}
+
+.title-f{
+    font-size: 5rem;
+    color: white;
+    text-shadow: -4px 2px 18px #CE218A;
+}
+
+.card{
+    border: none;
+    box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px;
+    width: 320px;
+    height: 500px;
+}
+
+.card img{
+    width: auto;
+    height: 300px;
+}
+
+.desc{
+    font-family: 'Louis';
+}
+
+@media (max-width: 767px) {
+    .row{
+        display:inline-block;
+        vertical-align: middle;
+        float: none;
+     }    
+     .title-f{
+         font-size: 4rem;
+     }
+}

@@ -1,15 +1,15 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/facility-m.css')}}">
-<link rel="stylesheet" href="{{asset('css/navbar/navbar-m.css')}}">
+<link rel="stylesheet" href="{{asset('css/management/request.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 @endsection
 @include('navbar.managenavbar')
 
 @section('container')
-<h1>{{ $title }}</h1>
-
-<table class="table p-5">
+<h1 class="title-f">{{ $title }}</h1>
+<div class="table-responsive-md">
+<table class="table box p-5">
     <thead>
       <tr>
         <th>No.</th>
@@ -42,16 +42,17 @@
         <td>
             <form method="post" action="/request/store">
 		        {{ csrf_field() }}
-                <input type="hidden" name="id" value="{{ $s->id }}"> <br/>
+                <input type="hidden" name="id" value="{{ $s->id }}">
                 <select name="status" value="{{ old('status') }}">
                     <option value="1">Approve</option>
                     <option value="2">Reject</option>
                 </select>
-                <input type="submit" value="Update">
+                <input type="submit" value="Update" class="btn-dashboard">
             </form>
         </td>
     </tr>
     @php($count++)
     @endforeach
   </table>
+</div>
 @endsection

@@ -2,13 +2,15 @@
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+<link rel="stylesheet" href="{{asset('css/user/request.css')}}">
+
 @endsection
 @include('navbar.usernavbar')
 
 @section('container')
-    <h1>{{ $title }}</h1>
-
-    <table class="table p-5">
+    <h1 class="title-f">{{ $title }}</h1>
+    <div class="table-responsive-md">
+    <table class="table p-5 box text-center">
         <thead>
           <tr>
             <th>No.</th>
@@ -41,4 +43,5 @@
         @php($count++)
         @endforeach
       </table>
+    </div>
 @endsection

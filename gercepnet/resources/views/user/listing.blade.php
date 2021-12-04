@@ -2,21 +2,25 @@
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+<link rel="stylesheet" href="{{asset('css/user/listing.css')}}">
+
 @endsection
 @include('navbar.usernavbar')
 
 @section('container')
-    <h1>{{ $title }}</h1>
+    <h1 class="title-f  mb-5">Our Facility</h1>
 
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="row g-4 justify-content-center">
     @foreach($data as $key)
-        <article class="col mb-5">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/200/300" style="width: 18rem; height:18rem" class="card-img-top" alt="{{ $key->namaFasilitas }}">
+        <article class="col-md-6 col-lg-4 col-sm-12 mb-5 justify-content-center d-flex">
+            <div class="card">
+                <a href="/userdetail/{{ $key->nameFasilitas }}">
+                    <img src="{{ asset('storage/' . $key->fotoFasilitas) }}" class="card-img-top" alt="{{ $key->namaFasilitas }}">
+                </a>
                 <div class="card-body">
-                    <p class="card-text"><a href="/userdetail/{{ $key->namaFasilitas }}">{{ $key->namaFasilitas }}</a></p>
-                    <p class="card-text">{{ $key->jenisFasilitas }}</>
-                    <p class="card-text">{{ $key->descFasilitas }}</>
+                    <p class="card-text title-card"><a href="/userdetail/{{ $key->nameFasilitas }}">{{ $key->nameFasilitas }}</a></p>
+                    <p class="card-text">{{ $key->jenisFasilitas }}</p>
+                    <p class="card-text desc">{{ Str::limit($key->descFasilitas, 100) }}</>
                 </div>
             </div>
         </article>

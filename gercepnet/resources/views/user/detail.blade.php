@@ -2,23 +2,25 @@
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+<link rel="stylesheet" href="{{asset('css/user/detail.css')}}">
+
 @endsection
 @include('navbar.usernavbar')
 
 @section('container')
-<div class="mb-3">
-    <img src="https://picsum.photos/200/300" class="img-fluid" alt="{{ $title }}">
-    <div class="card-body">
-        <h1 class="card-title">{{ $title }}</h1>
+<div class="mb-5 box" >
+    <h1 class="card-title title-f mb-5">{{ $title }}</h1>
+    <img src="{{ asset('storage/' . $facility->fotoFasilitas) }}" class="img-detail" alt="{{ $title }}">
+    <div class="card-body ">
 
-        <article>
-            <p class="card-text">{{ $facility->nameFasilitas }}</p>
-            <p class="card-text">{{ $facility->jenisFasilitas }}</p>
-            <p class="card-text">{{ $facility->descFasilitas }}</p>
+        <article class="mb-5">
+            <h1 class="card-text title-card">{{ $facility->nameFasilitas }}</h1>
+            <p class="card-text ">{{ $facility->jenisFasilitas }}</p>
+            <p class="card-text desc">{{$facility->descFasilitas }}</p>
         </article>
 
-    <button onclick="location.href='/booking/add/{{ $facility->id }}'" type="button" class="btn btn-primary">Book</button>
-    <button onclick="location.href='/userlisting'" type="button" class="btn btn-primary">Back</button>
+    <button onclick="location.href='/booking/add/{{ $facility->id }}'" type="button" class="btn-dashboard mt-3">Book</button>
+    <button onclick="location.href='/userlisting'" type="button" class="btn-dashboard mt-3">Back</button>
 
     </div>
   </div>
