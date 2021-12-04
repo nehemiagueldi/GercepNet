@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\Facility;
+use App\Models\User;
 use App\Http\Traits\FacilityTrait;
 use App\Http\Requests\StoreFacilityRequest;
 use App\Http\Requests\UpdateFacilityRequest;
 use App\Http\Requests\UserEdit;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 
 class AdminController extends Controller
@@ -97,7 +99,7 @@ class AdminController extends Controller
 
     public function userEstore(Request $request)
     {
-        @dd($request);
+        // @dd($request);
         // $validatedData = $request->validate([
         //     'name' => 'required|max:255',
         //     'username' => ['required'],
@@ -124,8 +126,12 @@ class AdminController extends Controller
 
     public function requestlist()
     {
+        $request = DB::table('sewas')->get();
+        // $sewa = DB::table('sewa')->get();
         return view('admin/requestlist', [
-            "title" => "Request List"
+            'sewas' => $request,
+            "title" => "Booking"
         ]);
+        // ->with('Sewa', $sewa);
     }
 }

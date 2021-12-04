@@ -1,15 +1,7 @@
 body {
-    background-image: url("/image/template-bg/k-10.jpg");
+    background-image: url("/image/template-bg/k-7.jpg");
 }
 
-.operation{
-    color: var(--color-pertama);
-    font-size: 1.5rem;
-}
-
-.operation:hover{
-    color: var(--color-kedua);
-}
 
 .box{
     background-color: rgba(255,255,255,0.7);
@@ -39,7 +31,9 @@ tbody{
     /* box-shadow: -4px 2px 18px #CE218A; */
     border: none;
     transition: ease-in-out 0.4s;
-    float: right;
+    float: none;
+    text-align: center;
+    background-color: var(--color-kedua);
 }
 
 .btn-dashboard:hover{
@@ -50,6 +44,15 @@ tbody{
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
+}
+
+.operation{
+    color: var(--color-pertama);
+    font-size: 1.5rem;
+}
+
+.operation:hover{
+    color: var(--color-kedua);
 }
 
 

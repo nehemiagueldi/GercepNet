@@ -1,41 +1,50 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
+<link rel="stylesheet" href="{{asset('css/admin/request.css')}}">
 @endsection
 @include('navbar.adminnavbar')
 
 @section('container')
-    <h1>Request List</h1>
-    <a href="admin/" class="btn-add float-end mb-3"> Add New</a> 
-	<table class="table p-5">
+	<h1 class="title-f">{{ $title }}</h1>
+	<div class="table-responsive-md">
+	<table class="table box p-5 text-center">
 		<thead>
 			<tr>
-				<th>Requester</th>
-				<th>Requested Facility</th>
-				<th>Date</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Operation</th>
+				<th>No.</th>
+				<th>nama peminjam</th>
+				<th>nama fasilitas</th>
+				<th>jam mulai</th>
+				<th>jam selesai</th>
+				<th>status</th>
+				<th>operation</th>
 			</tr>
 		</thead>
-		<!-- foreach$request as $r -->
+		@php($count = 1)
+		@foreach($sewas as $s)
 		<tr>
-            <td>#</td>
-			<td>#</td>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-			<td>
+			<td>{{$count}}</td>
+			<td>{{$s->username}}</td>
+			<td>{{$s->namaFasilitas}}</td>
+			<td>{{$s->jam_mulai}}</td>
+			<td>{{$s->jam_selesai}}</td>
+			<td> 
+				@if($s->status == 0)
+					<span class="label label-primary">Pending</span>
+				@elseif($s->status == 1)
+					<span class="label label-success">Approved</span>
+				@else
+					<span class="label label-danger">Rejected</span>
+				@endif
+				</td>
+			<td>	
 				<a href="#" class="operation">
-					<i class="bi bi-pencil-square"></i>
-				</a>
-				
-				<a href="# class="operation">
 					<i class="bi bi-trash"></i>
 				</a>
 			</td>
 		</tr>
-		<!-- endforeach -->
+		@php($count++)
+		@endforeach
 	</table>
 @endsection

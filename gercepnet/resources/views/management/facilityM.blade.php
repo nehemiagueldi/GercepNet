@@ -1,7 +1,7 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/management/facility.css')}}">
+<link rel="stylesheet" href="{{asset('css/admin/request.css')}}">
 <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 
 @endsection
