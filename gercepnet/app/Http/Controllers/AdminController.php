@@ -84,12 +84,12 @@ class AdminController extends Controller
         ]);
     }
 
-    
+
 
     public function userEshow($id)
     {
         $users = DB::table('users')->where('id', $id)->get();
-        return view('admin/uedit',[
+        return view('admin/uedit', [
             'users' => $users,
             "title" => "Edit User"
         ]);
@@ -97,7 +97,7 @@ class AdminController extends Controller
 
     public function userEstore(Request $request)
     {
-        @dd($request);
+        // @dd($request->id);
         // $validatedData = $request->validate([
         //     'name' => 'required|max:255',
         //     'username' => ['required'],
@@ -118,7 +118,7 @@ class AdminController extends Controller
     // public function facilitylist()
     public function userD($id)
     {
-        DB::delete('delete from users where id = ?',[$id]);
+        DB::delete('delete from users where id = ?', [$id]);
         return redirect('admin/userlist');
     }
 
