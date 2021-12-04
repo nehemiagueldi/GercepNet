@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="{{asset('css/template/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/gameover.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Welcome</title>
 </head>
 <body>
     <div class="text-center container mt-5">
-        <h1>Sorry you don't have permission</h1>
-        <div class="row">
+        <h1 data-aos="fade-up"  data-aos-duration="2000"> Sorry you don't have permission</h1>
+        <div class="row mt-5" data-aos="fade-up"  data-aos-duration="2000">
             <a href="{{ URL::previous() }}" class="col-6 text-end">
                 <button type="submit" class="btn mt-3 px-5"> Back</button>
             </a>
@@ -24,6 +26,7 @@
         </div>
     </div>
     <script>
-    </script>
+        AOS.init();
+      </script>
 </body>
 </html>

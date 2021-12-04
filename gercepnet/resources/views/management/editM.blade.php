@@ -8,8 +8,8 @@
 @include('navbar.managenavbar')
 
 @section('container') 
-<h1 class="title-f">Facility Listing</h1>
-<div class="box mx-auto">
+<h1 class="title-f" data-aos="fade-down"  data-aos-duration="2000">Facility Listing</h1>
+<div class="box mx-auto" data-aos="fade-down"  data-aos-duration="2000">
 	<div class="row form-group justify-content-center ">
 		@foreach($facilities as $f)
 		<form action="/facility/update" method="post">

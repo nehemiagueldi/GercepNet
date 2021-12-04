@@ -1,5 +1,5 @@
 body {
-    background-image: url("/image/template-bg/k-10.jpg");
+    background-image: url("/image/template-bg/bg-detail.jpg");
 }
 
 .operation{
@@ -96,6 +96,7 @@ tbody{
     bottom: 0;
     height: 100%;
   }
+
 
 @media (max-width: 767px) {  
     .title-f{

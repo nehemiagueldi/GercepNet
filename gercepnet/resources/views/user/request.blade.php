@@ -8,8 +8,8 @@
 @include('navbar.usernavbar')
 
 @section('container')
-    <h1 class="title-f">{{ $title }}</h1>
-    <div class="table-responsive-md">
+    <h1 class="title-f" data-aos="fade-right"  data-aos-duration="2000">{{ $title }}</h1>
+    <div class="table-responsive-md" data-aos="fade-left"  data-aos-duration="2000">
     <table class="table p-5 box text-center">
         <thead>
           <tr>

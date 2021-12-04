@@ -11,6 +11,8 @@ use App\Http\Requests\UpdateFacilityRequest;
 use App\Http\Requests\UserEdit;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Facility;
+
 
 
 class AdminController extends Controller
@@ -35,11 +37,18 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        DB::table('facilities')->insert([
-            'namaFasilitas' => $request->namaFasilitas,
-            'descFasilitas' => $request->descFasilitas,
-            'jenisFasilitas' => $request->jenisFasilitas,
+        $validatedData = $request->validate([
+            'nameFasilitas' => 'required|min:4|max:255',
+            'descFasilitas' => 'required|min:4',
+            'jenisFasilitas' => 'required|max:255',
+            'fotoFasilitas' => 'required|image|file|max:1024'
+            // harus ada file karena tipe filenya "file", max/min itu ukuran filenya satuannya KB, size itu batas ukuran gambar
         ]);
+        if ($request->file('fotoFasilitas')) {
+            $validatedData['fotoFasilitas'] = $request->file('fotoFasilitas')->store('fotofasilitas');
+        }
+
+        Facility::create($validatedData);
         return redirect('/admin/facility');
     }
 
@@ -55,7 +64,7 @@ class AdminController extends Controller
     public function update(Request $request)
     {
         DB::table('facilities')->where('id', $request->id)->update([
-            'namaFasilitas' => $request->namaFasilitas,
+            'nameFasilitas' => $request->nameFasilitas,
             'descFasilitas' => $request->descFasilitas,
             'jenisFasilitas' => $request->jenisFasilitas,
         ]);
@@ -134,4 +143,11 @@ class AdminController extends Controller
         ]);
         // ->with('Sewa', $sewa);
     }
+
+    public function deletereq($id)
+    {
+        DB::table('sewas')->where('id', $id)->delete();
+        return redirect('/admin/requestlist');
+    }
+
 }

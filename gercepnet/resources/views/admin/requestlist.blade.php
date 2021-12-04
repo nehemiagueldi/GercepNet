@@ -7,8 +7,8 @@
 @include('navbar.adminnavbar')
 
 @section('container')
-	<h1 class="title-f">{{ $title }}</h1>
-	<div class="table-responsive-md">
+	<h1 class="title-f" data-aos="fade-up"  data-aos-duration="2000">{{ $title }}</h1>
+	<div class="table-responsive-md" data-aos="fade-up"  data-aos-duration="2000">
 	<table class="table box p-5 text-center">
 		<thead>
 			<tr>
@@ -39,7 +39,7 @@
 				@endif
 				</td>
 			<td>	
-				<a href="#" class="operation">
+				<a href="/admin/request/delete/{{ $s->id}}" class="operation">
 					<i class="bi bi-trash"></i>
 				</a>
 			</td>

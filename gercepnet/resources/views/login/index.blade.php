@@ -6,8 +6,8 @@
 
 @section('container')
 <div class="row justify-content-center">
-  <h1 class="title mb-5">GERCEPNET</h1>
-  <div class="col-md-6 col-lg-4 col-sm-8 login">
+  <h1 class="title mb-5" data-aos="fade-down"  data-aos-duration="2000">GERCEPNET</h1>
+  <div class="col-md-6 col-lg-4 col-sm-8 login" data-aos="fade-down"  data-aos-duration="2000">
     @if (session()->has('success'))    
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       {{ session('success') }}

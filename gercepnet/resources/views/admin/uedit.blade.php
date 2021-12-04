@@ -7,8 +7,8 @@
 @include('navbar.adminnavbar')
 
 @section('container')
-    <h1 class="title-f">Edit User</h1>
-    <div class="box mx-auto">
+    <h1 class="title-f" data-aos="fade-up"  data-aos-duration="2000">Edit User</h1>
+    <div class="box mx-auto" data-aos="fade-up"  data-aos-duration="2000">
 	    <div class="row form-group justify-content-center ">
             @foreach($users as $u)
             <a href="/admin/userlist" class="float-end text-end mb-3" > <i class="bi bi-x-square text-dark"></i></a>

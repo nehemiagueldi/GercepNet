@@ -1,18 +1,18 @@
 @extends('template.header')
 
 @section('custom_css')
-<link rel="stylesheet" href="{{asset('css/admin/request.css')}}">
+<link rel="stylesheet" href="{{asset('css/management/facility.css')}}">
 <link rel="stylesheet" href="{{asset('css/navbar/navbar.css')}}">
 
 @endsection
 @include('navbar.managenavbar')
 
 @section('container')
-    <h1 class="title-f">Facility Listing</h1>
-		<button class="btn-dashboard mb-4">
-			<a href="/facility/add"> Add New</a> 
+    <h1 class="title-f" data-aos="fade-right"  data-aos-duration="3000">Facility Listing</h1>
+		<button class="btn41-43 btn-43 mb-4" data-aos="fade-left"  data-aos-duration="3000">
+			<a href="/facility/add" > Add New</a> 
 		</button>
-		<div class="respon">
+		<div class="respon" data-aos="fade-right"  data-aos-duration="3000">
 		<table class="table p-5 box text-center">
 		<thead>
 			<tr>

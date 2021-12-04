@@ -12,12 +12,12 @@
 
 @section('container')
 {{-- @dd($sewa) --}}
-    <h1 class="title-f">{{ $title }}</h1>
+    <h1 class="title-f" data-aos="fade-down"  data-aos-duration="2000">{{ $title }}</h1>
 
-        <div class="box mx-auto">
+        <div class="box mx-auto" data-aos="fade-down"  data-aos-duration="2000">
           <!-- component -->
           <section class="antialiased">
-            <div class="flex flex-col justify-center h-full">
+            <div class="flex flex-col justify-center h-full"> 
                 <div class="row form-group">
                   <form action="/booking/request" method="post">
 		                {{ csrf_field() }}
@@ -25,7 +25,7 @@
                     <div class="text-start mb-1">
                       Facility 
                     </div>
-                    <select  name="nameFasilitas" class="form-select mb-3" aria-label="Default select example">
+                    <select  name="namaFasilitas" class="form-select mb-3" aria-label="Default select example">
                       <option selected>Pick Your Facility</option>
                       @foreach($facilities as $f)
                         <option value="{{$f->nameFasilitas}}">{{$f->nameFasilitas}}</option>

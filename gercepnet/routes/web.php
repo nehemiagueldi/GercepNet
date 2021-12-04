@@ -84,6 +84,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/userlist/edit/{id}', [AdminController::class, 'userEshow']);
     Route::post('admin/userlist/store', [AdminController::class, 'userEstore']);
     Route::get('admin/requestlist', [AdminController::class,  'requestlist']);
+    Route::get('admin/request/delete/{id}', [AdminController::class, 'deletereq']);
+    
     // Route::get('admin/facilitylist', [AdminController::class,  'facilitylist']);
 });
 

@@ -8,8 +8,8 @@
 @include('navbar.managenavbar')
 
 @section('container')
-    <h1 class="title-f">Add Facility</h1>
-	<div class="box mx-auto">
+    <h1 class="title-f" data-aos="fade-down"  data-aos-duration="2000">Add Facility</h1>
+	<div class="box mx-auto" data-aos="fade-down"  data-aos-duration="2000">
 		<div class="row form-group justify-content-center ">
         <form action="/facility/store" method="POST" enctype="multipart/form-data">
 					@csrf

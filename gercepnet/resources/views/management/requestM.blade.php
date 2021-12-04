@@ -7,8 +7,8 @@
 @include('navbar.managenavbar')
 
 @section('container')
-<h1 class="title-f">{{ $title }}</h1>
-<div class="table-responsive-md">
+<h1 class="title-f" data-aos="fade-down"  data-aos-duration="2000">{{ $title }}</h1>
+<div class="table-responsive-md" data-aos="fade-down"  data-aos-duration="2000">
 <table class="table box p-5">
     <thead>
       <tr>

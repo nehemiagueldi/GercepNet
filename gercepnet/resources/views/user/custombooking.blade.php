@@ -12,9 +12,9 @@
 
 @section('container')
 {{-- @dd($sewa) --}}
-    <h1 class="title-f">{{ $title }}</h1>
+    <h1 class="title-f" data-aos="fade-down"  data-aos-duration="2000">{{ $title }}</h1>
 
-        <div class="form-floating box mx-auto">
+        <div class="form-floating box mx-auto" data-aos="fade-down"  data-aos-duration="2000">
           <!-- component -->
           <section class="antialiased">
             <div class="flex flex-col justify-center h-full">

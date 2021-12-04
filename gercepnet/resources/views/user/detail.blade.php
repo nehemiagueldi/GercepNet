@@ -9,9 +9,9 @@
 
 @section('container')
 <div class="mb-5 box" >
-    <h1 class="card-title title-f mb-5">{{ $title }}</h1>
-    <img src="{{ asset('storage/' . $facility->fotoFasilitas) }}" class="img-detail" alt="{{ $title }}">
-    <div class="card-body ">
+    <h1 class="card-title title-f mb-5" data-aos="fade-down"  data-aos-duration="2000">{{ $title }}</h1>
+    <img src="{{ asset('storage/' . $facility->fotoFasilitas) }}" class="img-detail" alt="{{ $title }}" data-aos="fade-down"  data-aos-duration="2000">
+    <div class="card-body " >
 
         <article class="mb-5">
             <h1 class="card-text title-card">{{ $facility->nameFasilitas }}</h1>
