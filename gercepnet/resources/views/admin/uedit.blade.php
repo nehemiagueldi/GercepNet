@@ -14,10 +14,10 @@
             <a href="/admin/userlist" class="float-end text-end mb-3" > <i class="bi bi-x-square text-dark"></i></a>
             <form action="/admin/userlist/store" method="POST">
                 {{ csrf_field() }}
-                {{-- <div class="text-start mb-1">
+                <div class="text-start mb-1">
                     ID 
                 </div>
-                    <input type="text" name="id" class="input form-control" id="id" value="{{ $u->id }}" readonly> --}}
+                    <input type="text" name="id" class="input form-control" id="id" value="{{ $u->id }}" readonly>
                 <div class="text-start mb-1">
                     Nama 
                 </div>
