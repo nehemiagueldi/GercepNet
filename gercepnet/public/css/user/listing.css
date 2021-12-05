@@ -15,8 +15,15 @@ body{
     height: 500px;
 }
 
+.kotak{
+    transition: ease-in-out 0.4s;
+}
+.kotak:hover{
+    transform: scale(1.05);
+}
+
 .card img{
-    width: auto;
+    /* width: auto; */
     height: 300px;
 }
 
