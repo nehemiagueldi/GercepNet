@@ -25,18 +25,19 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            $role = Auth::user()->role; 
+            $role = Auth::user()->role;
             switch ($role) {
                 case 'admin':
-                    return view('\admin\dashboard',['title' => 'Admin Dashboard']);
+                    return view('\admin\dashboard', ['title' => 'Admin Dashboard']);
                     break;
                 case 'management':
-                    return view('\management\dashboard',['title' => 'Management Dashboard']);
-                    break; 
+                    return view('\management\dashboard', ['title' => 'Management Dashboard']);
+                    break;
                 default:
-                    return view('\user\dashboard',['title' => 'User Dashboard']);
-                break;
+                    return view('\user\dashboard', ['title' => 'User Dashboard']);
+                    break;
             }
+            // kalau hosting return viewnya jadi ('admin.dashboard') dstrsnya
             // return redirect()->intended('/facility');
         }
 
@@ -69,10 +70,10 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
-    }    
+    }
     // public function __construct()
     // {
     // $this->middleware('guest')->except('logout');
     // }
 
-  }
+}
