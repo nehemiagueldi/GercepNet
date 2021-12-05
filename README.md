@@ -10,7 +10,7 @@ Jalankan php artisan key:generate
 
 Buat database dengan nama gercepnet
 
-Import sql yang disediakan didalam folder repository
+<b>Import sql yang disediakan didalam folder repository<b>
 
 php artisan serve
 
