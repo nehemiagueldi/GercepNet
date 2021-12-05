@@ -25,10 +25,10 @@
                   5 dengan spesifikasi untuk pro player.</h3>
                 <a class="nav-link navbar-dark" href="#section2"><h1 class="mt-5 text-light" data-aos="fade-up"  data-aos-duration="3000">Gallery</h1></a>
                 <div class="button mx-auto" data-aos="fade-up"  data-aos-duration="3000">
-                    <a href="/login" class="me-3">
+                    <a href="/login" class="mx-3 mt-3" >
                       <button class="btn41-43 btn-43">Login</button>
                     </a>
-                    <a href="/register">
+                    <a href="/register" class="mx-3 mt-3">
                       <button class="btn41-43 btn-43">SignUp</button>
                     </a>
                 </div>

@@ -33,7 +33,7 @@
             <a class="nav-link mt-3" href="/admin/userlist" {{ ($title === "user") ? 'active' : '' }}>User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mt-3" href="facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
+            <a class="nav-link mt-3" href="/admin/facility" {{ ($title === "facility") ? 'active' : '' }}>Facility</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mt-3" href="/admin/requestlist" {{ ($title === "request") ? 'active' : '' }}>Request</a>
