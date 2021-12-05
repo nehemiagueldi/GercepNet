@@ -12,7 +12,7 @@
 
     <div class="row g-4 justify-content-center">
     @foreach($data as $key)
-        <article class="col-md-6 col-lg-4 col-sm-12 mb-5 justify-content-center d-flex">
+        <article class="col-md-6 col-lg-4 col-sm-12 mb-5 justify-content-center d-flex kotak">
             <div class="card" data-aos="fade-left"  data-aos-duration="2000">
                 <a href="/userdetail/{{ $key->nameFasilitas }}">
                     <img src="{{ asset('storage/' . $key->fotoFasilitas) }}" class="card-img-top" alt="{{ $key->namaFasilitas }}">
