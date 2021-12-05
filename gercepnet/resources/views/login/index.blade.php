@@ -24,7 +24,7 @@
 
     <main class="form-signin">
       <h1 class="h3 mb-5 fw-normal text-center title-login">Welcome Back!</h1>
-      <form action="/login" method="POST">
+      <form action="{{ url('login') }}" method="POST">
         @csrf
         <div class="form-floating">
           <input type="email" name="email" class="input mb-4 form-control @error ('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus value="{{ old('email') }}">
