@@ -19,7 +19,7 @@ class SewaController extends Controller
     {
         $facility = DB::table('facilities')->get();
         $sewa = Sewa::with('users')->get();
-        
+
         // $sewa = DB::table('sewa')->get();
         return view('user/booking', [
             'facilities' => $facility,
@@ -33,7 +33,7 @@ class SewaController extends Controller
     {
         $facility = DB::table('facilities')->where('id', $id)->get();
         $sewa = Sewa::with('users')->get();
-        
+
         // $sewa = DB::table('sewa')->get();
         return view('user/custombooking', [
             'facilities' => $facility,
@@ -52,16 +52,22 @@ class SewaController extends Controller
     {
         // $sewa = DB::table('users')->where('id', $request->id)->get();
         // $sewa = Sewa::with('users')->where('id', $request->id)->get();
-            // @dd(namaFasilitas);
-            
-            DB::table('sewas')->insert([
-                'user_id' => auth()->user()->id,
-                'username' => auth()->user()->username,
-                'namaFasilitas' => $request->namaFasilitas,
-                'jam_mulai' => $request->jam_mulai,
-                'jam_selesai' => $request->jam_selesai,
-                // 'status' => "Waiting"
-            ]);
+        // @dd(namaFasilitas);
+
+        $request->validate([
+            'namaFasilitas' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
+        ]);
+
+        DB::table('sewas')->insert([
+            'user_id' => auth()->user()->id,
+            'username' => auth()->user()->username,
+            'namaFasilitas' => $request->namaFasilitas,
+            'jam_mulai' => $request->jam_mulai,
+            'jam_selesai' => $request->jam_selesai,
+            // 'status' => "Waiting"
+        ]);
         return redirect('/user/dashboard');
     }
 

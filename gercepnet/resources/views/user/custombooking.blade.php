@@ -43,8 +43,18 @@
                             Appointment Time 
                         </div>
                         
-                        <input class="form-control mb-3" type="datetime-local" name="jam_mulai">
-                        <input class="form-control mb-3" type="datetime-local" name="jam_selesai">
+                        <input class="form-control mb-3 @error('jam_mulai') is-invalid @enderror" type="datetime-local" name="jam_mulai">
+                        @error('jam_mulai')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>    
+                        @enderror
+                        <input class="form-control mb-3 @error('jam_selesai') is-invalid @enderror" type="datetime-local" name="jam_selesai">
+                        @error('jam_selesai')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>    
+                        @enderror
                         <button type="submit" value="submit" class="btn-dashboard">Submit</button>
                 </form>
             </div>
