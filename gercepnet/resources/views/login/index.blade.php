@@ -36,8 +36,13 @@
           @enderror
         </div>
         <div class="form-floating">
-          <input type="password" name="password" class="input form-control mb-4" id="password" placeholder="Password">
+          <input type="password" name="password" class="input form-control mb-4 @error ('email') is-invalid @enderror" id="password" placeholder="Password">
           <label for="password">Password</label> 
+          @error('password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
         </div>
         <button class="w-100 btn btn-lg btn-login" type="submit">Log in</button>
       </form>
