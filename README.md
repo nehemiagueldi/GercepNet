@@ -11,8 +11,11 @@ Apabila anda menemukan error 404 | NOT FOUND pada halaman http://127.0.0.1:8000/
 
 Akun dengan 3 role berbeda :
 
-Admin : admin@gmail.com 12345
+Admin : admin@gmail.com 
+password : 12345
 
-Management : management@gmail.com 12345
+Management : management@gmail.com
+password : 12345
 
 User : user@gmail.com 12345
+password : 12345
