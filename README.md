@@ -17,5 +17,5 @@ password : 12345
 Management : management@gmail.com
 password : 12345
 
-User : user@gmail.com 12345
+User : user@gmail.com
 password : 12345
