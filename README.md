@@ -1,7 +1,7 @@
 # GercepNet Internet Cafe Website
 GercepNet is a website for an internet cafe built using Laravel, a PHP web framework. The website is designed to help customers access the internet and other services offered by the internet cafe. This version of the website also includes a feature for booking a room.
 
-This project was developed as a group project as a final task for a course. The project was developed by a team of developers with different backgrounds and expertise.
+This project was developed as a group project as a final task for a course. The project was developed by a team of developers with same major.
 
 ## Features
 The website offers the following features to its customers:
